@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('date');
             $table->integer('clients');
             $table->string('photo' , 255);
+            $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
         });
     }
