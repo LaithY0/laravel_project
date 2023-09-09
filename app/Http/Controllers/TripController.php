@@ -34,7 +34,7 @@ class TripController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(trip $trip)
+    public function show()
     {
         //
     }
@@ -42,7 +42,7 @@ class TripController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(trip $trip)
+    public function edit()
     {
         //
     }
@@ -50,7 +50,7 @@ class TripController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, trip $trip)
+    public function update(Request $request)
     {
         //
     }
@@ -58,7 +58,7 @@ class TripController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(trip $trip)
+    public function destroy()
     {
         //
     }

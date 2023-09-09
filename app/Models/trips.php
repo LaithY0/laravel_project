@@ -10,5 +10,14 @@ class trips extends Model
     use HasFactory;
     protected $table = 'trips';
     
+    public function category()
+    {
+        return $this->belongsTo(category::class);
+    }
+
+    public function reservations()
+    {
+        return $this->hasMany(reservation::class);
+    }
     
 }

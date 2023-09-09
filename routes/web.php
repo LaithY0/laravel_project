@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TripsController;
+use App\Http\Controllers\ReservatioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -44,15 +48,26 @@ Route::get('/AdminIndex', function () {
 });
 
 
-Route::get('/AdminCategories', function () {
-    return view('admin.Categories');
-});
-Route::get('/AdminTrips', function () {
-    return view('admin.Trips');
-});
-Route::get('/AdminOrders', function () {
-    return view('admin.Orders');
-});
+
+Route::get('AdminCategories', [CategoryController::class, 'index'] );
+Route::post('addCat', [CategoryController::class, 'create'] );
+Route::post('updateCat', [CategoryController::class, 'edit'] );
+Route::get('deleteCat/id/{id}', [CategoryController::class, 'destroy'] );
+
+
+
+
+Route::get('AdminTrips', [TripsController::class, 'index'] );
+
+
+Route::get('AdminOrders', [ReservatioController::class, 'index'] );
+Route::post('addres', [ReservatioController::class, 'create'] );
+Route::post('editres', [ReservatioController::class, 'update'] );
+Route::get('updateres/id/{id}/status/{status}', [ReservatioController::class, 'edit'] );
+Route::get('deleteRes/id/{id}', [ReservatioController::class, 'destroy'] );
+
+
+
 Route::get('/AdminAdd_users', function () {
     return view('admin.Add_users');
 });

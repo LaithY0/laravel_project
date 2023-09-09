@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\trips;
+use App\Models\category;
+
 use Illuminate\Http\Request;
 
 class TripsController extends Controller
@@ -13,6 +15,9 @@ class TripsController extends Controller
     public function index()
     {
         //
+        $data = trips::with('category:id,category_name')->get();
+        $data2= category::all();
+        return view('admin.Trips', compact('data','data2'));
     }
 
     /**
