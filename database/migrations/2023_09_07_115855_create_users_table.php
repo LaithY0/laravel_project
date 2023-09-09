@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('email');
             $table->integer('phone');
-            $table->string('payment_status');
+            $table->tinyInteger('is_admin')->default(0);            
             $table->timestamps();
         });
     }
