@@ -1,6 +1,6 @@
 @extends('admin.Master')
 
-@section('title-content' , 'Trips')
+@section('title-content' , 'users')
 
 @section('main_content')
 
@@ -11,7 +11,7 @@
 
 				<div class="row g-3 mb-4 align-items-center justify-content-between">
 					<div class="col-auto">
-						<h1 class="app-page-title mb-0">Trips</h1>
+						<h1 class="app-page-title mb-0">Users</h1>
 					</div>
 					<div class="col-auto">
 						<div class="page-utilities">
@@ -46,7 +46,7 @@
 
 
 				<div class="d-grid gap-2 d-md-block">
-					<a class="btn btn-success btn-lg" role="button" >Add Trips</a>
+					<a class="btn btn-success btn-lg" role="button" >Add User</a>
 				  </div>
 
 
@@ -64,14 +64,11 @@
 										<thead>
 											<tr>
 												<th class="cell">id</th>
-												<th class="cell">trip_name</th>
-												<th class="cell">price</th>
-												<th class="cell">date</th>
-												<th class="cell">photo</th>
-												<th class="cell">clients</th>
-												<th class="cell">days</th>
-												<th class="cell">details</th>
-												<th class="cell">category_id</th>
+												<th class="cell">name</th>
+												<th class="cell">email</th>
+												<th class="cell">phone</th>
+												<!-- <th class="cell">Status</th>
+												<th class="cell">Total</th> -->
 												<th class="cell"></th>
 											</tr>
 										</thead>
@@ -140,37 +137,58 @@
 
 											<tr>
 												<td class="cell">#15341</td>
-												<td class="cell"><span class="truncate">Morbi vulputate </span></td>
+												<td class="cell"><span class="truncate">Morbi vulputate lacinia neque et
+														sollicitudin</span></td>
 												<td class="cell">Raymond Atkins</td>
 												<td class="cell"><span class="cell-data">11 Oct</span><span
 														class="note">11:18 AM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
+												<!-- <td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$678.26</td> -->
 												<td class="cell">
 													<a class="btn btn-danger btn-sm" role="button" >Delete</a>
-													<a class="btn btn-success btn-sm" role="button" >Update</a>
+													<!-- <a class="btn-sm app-btn-secondary" href="#">delete</a> -->
+													<!-- <div class="btn-group"> -->
+
+														<div class="btn-group dropend">
+															<button type="button" class="btn app-btn-primary btn-sm dropdown-toggle"
+															data-bs-toggle="dropdown" aria-expanded="false">
+															User_Status
+														</button>
+														<ul class="dropdown-menu">
+															<li><a class="dropdown-item" href="#">Admin</a></li>
+															<li><a class="dropdown-item" href="#">user</a>
+															</li>
+														</ul>
+													</div>
+														
 												</td>
 											</tr>
 
 
 											<tr>
 												<td class="cell">#15341</td>
-												<td class="cell"><span class="truncate">Morbi vulputate </span></td>
+												<td class="cell"><span class="truncate">Morbi vulputate lacinia neque et
+														sollicitudin</span></td>
 												<td class="cell">Raymond Atkins</td>
 												<td class="cell"><span class="cell-data">11 Oct</span><span
 														class="note">11:18 AM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
+												<!-- <td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$678.26</td> -->
 												<td class="cell">
-													<!-- <a class="btn-sm app-btn-secondary" href="#">delete</a> -->
 													<a class="btn btn-danger btn-sm" role="button" >Delete</a>
-													<a class="btn btn-success btn-sm" role="button" >Update</a>
+													<!-- <a class="btn-sm app-btn-secondary" href="#">delete</a> -->
+													<div class="btn-group">
+														<button type="button" class="btn app-btn-primary btn-sm dropdown-toggle"
+															data-bs-toggle="dropdown" aria-expanded="false">
+															User_Status
+														</button>
+														<ul class="dropdown-menu">
+															<li><a class="dropdown-item" href="#">Admin</a></li>
+															<li><a class="dropdown-item" href="#">user</a>
+															</li>
+														</ul>
+													</div>
+													
 												</td>
 											</tr>
 

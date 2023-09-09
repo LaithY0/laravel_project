@@ -1,6 +1,6 @@
 @extends('admin.Master')
 
-@section('title-content' , 'Trips')
+@section('title-content' , 'Categories')
 
 @section('main_content')
 
@@ -11,13 +11,13 @@
 
 				<div class="row g-3 mb-4 align-items-center justify-content-between">
 					<div class="col-auto">
-						<h1 class="app-page-title mb-0">Trips</h1>
+						<h1 class="app-page-title mb-0">Categories</h1>
 					</div>
 					<div class="col-auto">
 						<div class="page-utilities">
 							<div class="row g-2 justify-content-start justify-content-md-end align-items-center">
 								<div class="col-auto">
-									<form class="table-search-form row gx-1 align-items-center">
+									<!-- <form class="table-search-form row gx-1 align-items-center">
 										<div class="col-auto">
 											<input type="text" id="search-orders" name="searchorders"
 												class="form-control search-orders" placeholder="Search">
@@ -25,10 +25,11 @@
 										<div class="col-auto">
 											<button type="submit" class="btn app-btn-secondary">Search</button>
 										</div>
-									</form>
+									</form> -->
 
-								</div><!--//col-->
-								<div class="col-auto">
+								</div>
+								<!--//col-->
+								<!-- <div class="col-auto">
 
 									<select class="form-select w-auto">
 										<option selected value="option-1">All</option>
@@ -37,23 +38,22 @@
 										<option value="option-4">Last 3 months</option>
 
 									</select>
-								</div>
+								</div> -->
 
 							</div><!--//row-->
 						</div><!--//table-utilities-->
-					</div><!--//col-auto-->
+					</div>
+					<!--//col-auto-->
 				</div><!--//row-->
 
 
 				<div class="d-grid gap-2 d-md-block">
-					<a class="btn btn-success btn-lg" role="button" >Add Trips</a>
+					<a class="btn btn-success btn-lg" role="button" >Add category</a>
 				  </div>
 
 
 
 				  <br>
-
-
 				<div class="tab-content" id="orders-table-tab-content">
 					<div class="tab-pane fade show active" id="orders-all" role="tabpanel"
 						aria-labelledby="orders-all-tab">
@@ -64,14 +64,11 @@
 										<thead>
 											<tr>
 												<th class="cell">id</th>
-												<th class="cell">trip_name</th>
-												<th class="cell">price</th>
-												<th class="cell">date</th>
-												<th class="cell">photo</th>
-												<th class="cell">clients</th>
-												<th class="cell">days</th>
-												<th class="cell">details</th>
-												<th class="cell">category_id</th>
+												<th class="cell">category_name</th>
+												<th class="cell">category_picture</th>
+												<!-- <th class="cell">phone</th> -->
+												<!-- <th class="cell">Status</th>
+												<th class="cell">Total</th> -->
 												<th class="cell"></th>
 											</tr>
 										</thead>
@@ -140,37 +137,36 @@
 
 											<tr>
 												<td class="cell">#15341</td>
-												<td class="cell"><span class="truncate">Morbi vulputate </span></td>
+												<td class="cell"><span class="truncate">Morbi vulputate lacinia neque et
+														sollicitudin</span></td>
 												<td class="cell">Raymond Atkins</td>
-												<td class="cell"><span class="cell-data">11 Oct</span><span
-														class="note">11:18 AM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
+												<!-- <td class="cell"><span class="cell-data">11 Oct</span><span
+														class="note">11:18 AM</span></td> -->
+												<!-- <td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$678.26</td> -->
 												<td class="cell">
 													<a class="btn btn-danger btn-sm" role="button" >Delete</a>
 													<a class="btn btn-success btn-sm" role="button" >Update</a>
+													<!-- <a class="btn-sm app-btn-secondary" href="#">delete</a> -->
+													<!-- <div class="btn-group"> -->
 												</td>
 											</tr>
 
 
 											<tr>
 												<td class="cell">#15341</td>
-												<td class="cell"><span class="truncate">Morbi vulputate </span></td>
+												<td class="cell"><span class="truncate">Morbi vulputate lacinia neque et
+														sollicitudin</span></td>
 												<td class="cell">Raymond Atkins</td>
-												<td class="cell"><span class="cell-data">11 Oct</span><span
-														class="note">11:18 AM</span></td>
-												<td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
-												<td class="cell">$678.26</td>
+												<!-- <td class="cell"><span class="cell-data">11 Oct</span><span
+														class="note">11:18 AM</span></td> -->
+												<!-- <td class="cell"><span class="badge bg-success">Paid</span></td>
+												<td class="cell">$678.26</td> -->
 												<td class="cell">
-													<!-- <a class="btn-sm app-btn-secondary" href="#">delete</a> -->
 													<a class="btn btn-danger btn-sm" role="button" >Delete</a>
 													<a class="btn btn-success btn-sm" role="button" >Update</a>
+													<!-- <a class="btn-sm app-btn-secondary" href="#">delete</a> -->
+													
 												</td>
 											</tr>
 
@@ -198,6 +194,7 @@
 
 
 	</div><!--//app-wrapper-->
+
 
     
 @endsection

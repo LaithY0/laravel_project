@@ -23,11 +23,40 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('admin.dashboard');
+    return view('admin.Login');
 });
 
-Route::get('/a', function () {
+
+Route::get('/AdminUser', function () {
+    return view('admin.Users');
+});
+
+Route::get('/AdminAccount', function () {
+    return view('admin.Account');
+});
+
+Route::get('/AdminLogin', function () {
+    return view('admin.Login');
+});
+
+Route::get('/AdminIndex', function () {
+    return view('admin.Index');
+});
+
+
+Route::get('/AdminCategories', function () {
+    return view('admin.Categories');
+});
+Route::get('/AdminTrips', function () {
     return view('admin.Trips');
 });
+Route::get('/AdminOrders', function () {
+    return view('admin.Orders');
+});
+Route::get('/AdminAdd_users', function () {
+    return view('admin.Add_users');
+});
+
+
 
 

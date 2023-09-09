@@ -16,6 +16,7 @@ return new class extends Migration
             $table->date('reservation_date');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('trip_id')->constrained('trips');
+            $table->string('payment_status');
             $table->timestamps();
         });
     }
