@@ -12,7 +12,7 @@ class TripsController extends Controller
    
 
     public function index (){
-        
+
         $data = trips::with('category:id,category_name')->get();
         $data2= category::all();
         return view('admin.Trips', compact('data','data2'));

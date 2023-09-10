@@ -6,8 +6,10 @@
 <br><br><br><br><br>
 
 <section class="ftco-counter img" id="section-counter">
-    <div class="container">
-        @foreach($trips as $trip)
+
+    @foreach($trips as $trip)
+    <div class="container" >
+       
         <div class="row d-flex">
             <div class="col-md-6 d-flex">
                 <div class="img d-flex align-self-stretch" style="background-image:url({{ $trip->photo }}); width:25rem; height:30rem;"></div>
@@ -21,8 +23,10 @@
                 </div>
             </div>
         </div>
-        @endforeach
+       
     </div>
+
+    @endforeach
 </section>
 
 <br><br>
