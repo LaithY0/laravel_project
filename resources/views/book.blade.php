@@ -31,7 +31,7 @@
       <div class="row">
           <div class="col-md-4 ftco-animate">
               <div class="project-wrap">
-                  <a href="#" class="img" style="background-image: url(myimg/petra.jpg);"></a>
+                  <a href="petradetails" class="img" style="background-image: url(myimg/petra.jpg);"></a>
                   <div class="text p-4">
                       <span class="price">10JOD/person</span>
                       <span class="days">1 Day Tour</span>
@@ -47,7 +47,7 @@
           </div>
           <div class="col-md-4 ftco-animate">
               <div class="project-wrap">
-                  <a href="#" class="img" style="background-image: url(myimg/w-rum.jpg);"></a>
+                  <a href="wadidetails" class="img" style="background-image: url(myimg/w-rum.jpg);"></a>
                   <div class="text p-4">
                       <span class="price">10JOD/person</span>
                       <span class="days">1 Day Tour</span>
@@ -62,7 +62,7 @@
           </div>
           <div class="col-md-4 ftco-animate">
               <div class="project-wrap">
-                  <a href="#" class="img" style="background-image: url(myimg/aqC.jpg);"></a>
+                  <a href="aqabadetails" class="img" style="background-image: url(myimg/aqC.jpg);"></a>
                   <div class="text p-4">
                       <span class="price">3JOD/person</span>
                       <span class="days">7hour Tour</span>
@@ -78,7 +78,7 @@
 
           <div class="col-md-4 ftco-animate">
               <div class="project-wrap">
-                  <a href="#" class="img" style="background-image: url(myimg/amman-jordan.jpg);"></a>
+                  <a href="ammandetails" class="img" style="background-image: url(myimg/amman-jordan.jpg);"></a>
                   <div class="text p-4">
                       <span class="price">50JOD/person</span>
                       <span class="days">5 Days Tour</span>
@@ -93,7 +93,7 @@
           </div>
           <div class="col-md-4 ftco-animate">
               <div class="project-wrap">
-                  <a href="#" class="img" style="background-image: url(myimg/thumbs_b2_311f22c55a8405b4512844093d34b4f9.jpg);"></a>
+                  <a href="ummdetails" class="img" style="background-image: url(myimg/thumbs_b2_311f22c55a8405b4512844093d34b4f9.jpg);"></a>
                   <div class="text p-4">
                       <span class="price">15JOD/person</span>
                       <span class="days">1 Day Tour</span>
@@ -109,7 +109,7 @@
           </div>
           <div class="col-md-4 ftco-animate">
               <div class="project-wrap">
-                  <a href="#" class="img" style="background-image: url(myimg/deadS.jpg);"></a>
+                  <a href="deaddetails" class="img" style="background-image: url(myimg/deadS.jpg);"></a>
                   <div class="text p-4">
                       <span class="price">30JOD/person</span>
                       <span class="days">2 Days Tour</span>

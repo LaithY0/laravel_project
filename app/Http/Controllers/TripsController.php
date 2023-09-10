@@ -7,59 +7,88 @@ use Illuminate\Http\Request;
 
 class TripsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+   
+    public function enjoyment()
     {
-        //
+        $trips = trips::where('category_id', 3)->get();
+
+        return view('tours', ['trips' => $trips]);
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function medical()
     {
-        //
+        $trips = trips::where('category_id', 4)->get();
+
+        return view('tours', ['trips' => $trips]);
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function archaeological()
     {
-        //
+        $trips = trips::where('category_id', 1)->get();
+
+        return view('tours', ['trips' => $trips]);
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(trips $trips)
+    public function religious()
     {
-        //
+        $trips = trips::where('category_id', 2)->get();
+
+        return view('tours', ['trips' => $trips]);
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(trips $trips)
+
+    public function petradetails()
     {
-        //
+        $trips = trips::where('trip_name', 'petra')->get();
+
+        return view('details')->with('trips', $trips);
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, trips $trips)
+    public function ummdetails()
     {
-        //
+        $trips = trips::where('trip_name', 'Umm Qais, Irbid')->get();
+
+        return view('details')->with('trips', $trips);
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(trips $trips)
+    public function deaddetails()
     {
-        //
+        $trips = trips::where('trip_name', 'Dead sea')->get();
+
+        return view('details')->with('trips', $trips);
+
     }
+
+    public function aqabadetails()
+    {
+        $trips = trips::where('trip_name', 'Aqaba')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
+    public function ammandetails()
+    {
+        $trips = trips::where('trip_name', 'Amman')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
+    
+    public function wadidetails()
+    {
+        $trips = trips::where('trip_name', 'Wadi Rum')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+   
+
 }

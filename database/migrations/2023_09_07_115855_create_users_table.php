@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email');
             $table->integer('phone');
             $table->string('payment_status');
+            $table->string('photo');
             $table->timestamps();
         });
     }
