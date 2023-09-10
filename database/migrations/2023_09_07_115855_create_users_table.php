@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('email');
             $table->integer('phone');
-            $table->string('payment_status');
-            $table->string('photo');
+            $table->string('payment_status')->nullable();
             $table->tinyInteger('is_admin')->default(0);            
             $table->timestamps();
         });
