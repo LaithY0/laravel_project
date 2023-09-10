@@ -9,17 +9,24 @@ use Illuminate\Http\Request;
 
 class TripsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+   
+    public function enjoyment()
     {
+<<<<<<< HEAD
         
+=======
+        $trips = trips::where('category_id', 3)->get();
+
+        return view('tours', ['trips' => $trips]);
+
+        //
+>>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
         $data = trips::with('category:id,category_name')->get();
         $data2= category::all();
         return view('admin.Trips', compact('data','data2'));
     }
 
+<<<<<<< HEAD
     /**
      * Show the form for creating a new resource.
      */
@@ -44,23 +51,33 @@ class TripsController extends Controller
 
         $trp->save();
         return redirect('/AdminTrips');    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+=======
+    public function medical()
     {
-        //
+        $trips = trips::where('category_id', 4)->get();
+
+        return view('tours', ['trips' => $trips]);
+
+    }
+>>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
+
+    public function archaeological()
+    {
+        $trips = trips::where('category_id', 1)->get();
+
+        return view('tours', ['trips' => $trips]);
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(trips $trips)
+    public function religious()
     {
-        //
+        $trips = trips::where('category_id', 2)->get();
+
+        return view('tours', ['trips' => $trips]);
+
     }
 
+<<<<<<< HEAD
     /**
      * Show the form for editing the specified resource.
      */
@@ -90,17 +107,26 @@ class TripsController extends Controller
             return redirect('/AdminTrips');
         }
 
+=======
 
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, trips $trips)
+    public function petradetails()
     {
-        //
+        $trips = trips::where('trip_name', 'petra')->get();
+
+        return view('details')->with('trips', $trips);
+>>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
+
     }
 
+    public function ummdetails()
+    {
+        $trips = trips::where('trip_name', 'Umm Qais, Irbid')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
+<<<<<<< HEAD
     /**
      * Remove the specified resource from storage.
      */
@@ -109,5 +135,40 @@ class TripsController extends Controller
         $trp = trips::find($id);
         $trp->delete();
         return redirect('/AdminTrips');  
+=======
+    public function deaddetails()
+    {
+        $trips = trips::where('trip_name', 'Dead sea')->get();
+
+        return view('details')->with('trips', $trips);
+
+>>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
     }
+
+    public function aqabadetails()
+    {
+        $trips = trips::where('trip_name', 'Aqaba')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
+    public function ammandetails()
+    {
+        $trips = trips::where('trip_name', 'Amman')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
+    
+    public function wadidetails()
+    {
+        $trips = trips::where('trip_name', 'Wadi Rum')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+   
+
 }
