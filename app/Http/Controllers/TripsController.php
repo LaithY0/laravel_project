@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\trips;
+use App\Models\category;
+
 use Illuminate\Http\Request;
 
 class TripsController extends Controller
@@ -10,10 +12,17 @@ class TripsController extends Controller
    
     public function enjoyment()
     {
+<<<<<<< HEAD
         $trips = trips::where('category_id', 3)->get();
 
         return view('tours', ['trips' => $trips]);
 
+=======
+        //
+        $data = trips::with('category:id,category_name')->get();
+        $data2= category::all();
+        return view('admin.Trips', compact('data','data2'));
+>>>>>>> f34ea1d85fb2e4c4fdc5b33570326ab0e9c20444
     }
 
     public function medical()
