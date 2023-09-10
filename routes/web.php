@@ -102,7 +102,7 @@ Route::get('/details', function () {
 
 Route::get('/home', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/categories', function () {
     return view('categories');
@@ -134,7 +134,7 @@ Route::post('/update/{id}',[UsersController::class, 'update']);
 
 //sign up toutes
 Route::get('/signup', [signup::class , 'index'])->name('signup');
-Route::post('/store' , [signup::class , 'index'])->name('store');
+Route::post('/store' , [signup::class , 'store'])->name('store');
 
 
 
