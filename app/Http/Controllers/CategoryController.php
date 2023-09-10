@@ -13,14 +13,23 @@ class CategoryController extends Controller
     public function index()
     {
         //
+        $data = category::all();
+        return view('admin.Categories', compact('data'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $cat = new category();
+        $cat->category_name    = $request->input('cat_name');
+        $img = $request->file('cat_img');
+        $imgname = $img->getClientOriginalName();
+        $img->move(public_path('assetsAdmin/images'), $imgname);
+        $cat->category_picture = $imgname;
+        $cat->save();
+        return redirect('/AdminCategories');
     }
 
     /**
@@ -42,9 +51,20 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(category $category)
+    public function edit(Request $request)
     {
-        //
+
+        $id = $request->input('id');
+        $cat = category::find($id);
+        $cat->category_name = $request->input('cat_name');
+        if ($request->file('cat_img')) {
+            $img = $request->file('cat_img');
+            $imgname = $img->getClientOriginalName();
+            $img->move(public_path('assetsAdmin/images'), $imgname);
+            $cat->category_picture = $imgname;
+        }
+        $cat->update();
+        return redirect('/AdminCategories');
     }
 
     /**
@@ -58,8 +78,12 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(category $category)
+    public function destroy($id)
     {
         //
+        $cat = category::find($id);
+        $cat->delete();
+        return redirect('/AdminCategories');
+
     }
 }
