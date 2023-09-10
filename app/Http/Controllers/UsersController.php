@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\users;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -12,15 +12,23 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        $data = User::all();
+        return view('admin.Users', compact('data'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $usr = new User();
+        $usr->Fname    = $request->input('user_fname');
+        $usr->Lname    = $request->input('user_lname');
+        $usr->password    = $request->input('user_pass');
+        $usr->email    = $request->input('user_email');
+        $usr->phone    = $request->input('user_phone');
+        $usr->save();
+        return redirect('/AdminUser');
     }
 
     /**
@@ -34,7 +42,7 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(users $users)
+    public function show()
     {
         //
     }
@@ -42,15 +50,17 @@ class UsersController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(users $users)
+    public function edit($id, $status)
     {
-        //
-    }
+        $usr = User::find($id);
+        $usr->is_admin= $status;
+        $usr->update();
+        return redirect('/AdminUser');    }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, users $users)
+    public function update()
     {
         //
     }
@@ -58,8 +68,9 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(users $users)
+    public function destroy($id)
     {
-        //
-    }
+        $usr = User::find($id);
+        $usr->delete();
+        return redirect('/AdminUser');    }
 }

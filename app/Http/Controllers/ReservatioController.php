@@ -15,7 +15,7 @@ class ReservatioController extends Controller
      */
     public function index()
     {
-        $data = reservation::with(['user:id,name', 'trip:id,trip_name'])->get();
+        $data = reservation::with(['user:id,Fname', 'trip:id,trip_name'])->get();
         $data2= User::all();
         $data3= trips::all();
 
