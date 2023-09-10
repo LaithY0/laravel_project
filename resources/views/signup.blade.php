@@ -42,7 +42,7 @@
             <h1 class="title" style="color: #fd7e14;">Sign up</h1>
             <p class="caption mb-4">Create your account in seconds.</p>
 
-            <form action="#" class="pt-3">
+            <form action="{{route('store')}}" method="post" class="pt-3">
 
                 <div class="form-floating">
                     <label for="name">Full Name</label>
