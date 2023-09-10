@@ -1,11 +1,13 @@
 <?php
 
-use App\Http\Controllers\UsersController;
-
 use App\Models\users;
+
+use App\Http\Controllers\signup;
+use App\Http\Controllers\logIn_controller;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TripsController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReservatioController;
 
 
@@ -28,8 +30,8 @@ use App\Http\Controllers\ReservatioController;
 // php artisan serve --port=8001
 
 
-
-Route::get('/', function () {
+//admin routes
+Route::get('/admin', function () {
     return view('admin.Login');
 });
 
@@ -75,7 +77,7 @@ Route::get('/AdminAdd_users', function () {
     return view('admin.Add_users');
 });
 
-
+//end admin routes
 
 Route::get('/about', function () {
     return view('about');
@@ -85,12 +87,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/signup', function () {
-    return view('signup');
-});
+
+
 
 
 Route::get('/book', function () {
@@ -103,7 +101,7 @@ Route::get('/details', function () {
 
 Route::get('/home', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/categories', function () {
     return view('categories');
@@ -133,10 +131,21 @@ Route::get('/user',[UsersController::class, 'user']);
 Route::get('/edit',[UsersController::class, 'edit']);
 Route::post('/update/{id}',[UsersController::class, 'update']);
 
-
-
-
-
+//sign up toutes
+Route::get('/signup', [signup::class , 'index'])->name('signup');
+Route::post('/store' , [signup::class , 'store'])->name('store');
+//end sigup
+//log in routes
+Route::get('/login', [logIn_controller::class , 'index'])->name('login');
+Route::post('/login' , [logIn_controller::class , 'check'])->name('check');
+//end login
+//logout
+Route::get('/logout' , function(){
+    if(session()->has('name')){
+        session()->pull('name');
+    }
+    return redirect()->route('login');
+})->name('logout');
 
 
 
