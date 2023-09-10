@@ -34,7 +34,8 @@
 			<div class="row">
 				<div class="col-md-12 mb-5">
 					<div class="search-wrap-1 search-wrap-notop ftco-animate p-4">
-						<form action="#" method="get" class="search-property-1">
+						<form action="search" method="post" class="search-property-1">
+							@csrf
 							<div class="row">
 								<div class="col-lg align-items-end">
 									<div class="form-group">
@@ -281,7 +282,7 @@
         </div>
     	</div>
 		<div class="text-center">
-			<a href="destination.html" class="btn btn-primary">View All Tours</a>
+			<a href="{{route('alltours')}}" class="btn btn-primary">View All Tours</a>
 		</div>
     </section>
 

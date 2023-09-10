@@ -9,6 +9,7 @@ use App\Http\Controllers\TripsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReservatioController;
+use App\Http\Controllers\search_controller;
 
 
 /*
@@ -110,7 +111,7 @@ Route::get('/categories', function () {
 
 Route::get('/tours', function () {
     return view('tours');
-});
+})->name('tours');
 
 
 
@@ -148,5 +149,8 @@ Route::get('/logout' , function(){
 })->name('logout');
 //search
 Route::get('/search' , [search_controller::class , 'index']);
-
+Route::post('/search' , [search_controller::class , 'search']);
+Route::get('alltours' , function(){
+    return view('alltours');
+})->name('alltours');
 
