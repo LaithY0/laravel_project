@@ -138,8 +138,14 @@ Route::post('/store' , [signup::class , 'store'])->name('store');
 //log in routes
 Route::get('/login', [logIn_controller::class , 'index'])->name('login');
 Route::post('/login' , [logIn_controller::class , 'check'])->name('check');
-
-
+//end login
+//logout
+Route::get('/logout' , function(){
+    if(session()->has('name')){
+        session()->pull('name');
+    }
+    return redirect()->route('login');
+})->name('logout');
 
 
 

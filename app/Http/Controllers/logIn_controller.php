@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use \Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class logIn_controller extends Controller
 {
@@ -22,7 +21,11 @@ class logIn_controller extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
-            return redirect()->route('home');
+            $data = users::where('email', $email)->first();
+            if ($data) {
+                $request->session()->put('name', $data->Fname);
+            }
+            return redirect()->route('home');   
         } else {
             return redirect()->route('login');
         }
