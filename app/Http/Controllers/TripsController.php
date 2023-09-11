@@ -110,14 +110,16 @@ class TripsController extends Controller
 {
 
     $id = $req->trip_id;
-    $trip = trips::find($id); 
+    $trip = trips::find($id)->get()->first(); 
 
     if (!$trip) {
        
         return "somthing wrong .!";
     }
     
-    return redirect('user')->with('trips', $trip);
+
+    
+    return view('usertours')->with('trip', $trip);
 }
 
 
