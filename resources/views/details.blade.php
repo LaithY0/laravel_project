@@ -32,5 +32,6 @@
 <br><br>
 
 
-<button style="font-size: xx-large">Booking now </button>
+
+<form action="{{url(usertour)}}"></form>
 @endsection

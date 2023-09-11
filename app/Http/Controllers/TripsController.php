@@ -21,8 +21,13 @@ class TripsController extends Controller
 
     public function enjoyment()
     {
-        $trips = trips::where('category_id', 3)->get();
+        $trips = trips::where('category_id', 1 )->get();
+        foreach ( $trips as $trip){
+// if($trip->name=="petra"){
+//     <a href="Petra" class="img" style="background-image: url({{ $trips->photo}});"></a>
 
+// }elseif
+        }
         return view('tours', ['trips' => $trips]);
 
         
@@ -39,7 +44,7 @@ class TripsController extends Controller
 
     public function archaeological()
     {
-        $trips = trips::where('category_id', 1)->get();
+        $trips = trips::where('category_id', 3)->get();
 
         return view('tours', ['trips' => $trips]);
 

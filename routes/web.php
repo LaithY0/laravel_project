@@ -131,6 +131,7 @@ Route::get('/user',[UsersController::class, 'user']);
 Route::get('/edit',[UsersController::class, 'edit']);
 Route::post('/update/{id}',[UsersController::class, 'update']);
 
+
 //sign up toutes
 Route::get('/signup', [signup::class , 'index'])->name('signup');
 Route::post('/store' , [signup::class , 'store'])->name('store');

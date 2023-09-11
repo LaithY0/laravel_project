@@ -72,8 +72,8 @@
     
 <div class="profile-container">
     <h2>Profile </h2>
-    <img src="{{ asset('storage/' . $user->photo) }}" alt="User Photo" class="profile-image">
-    <div class="profile-name">{{$user->name}}</div>
+    <img src="{{ $user->photo }}" alt="User Photo" class="profile-image">
+    <div class="profile-name">{{$user->Fname}}  {{$user->Lname}}</div>
       <div class="profile-email">{{$user->email}}</div>
       <div class="profile-phone">{{$user->phone}}</div>
       <a href="edit" class="edit-button">Edit</a>

@@ -10,6 +10,8 @@ class UsersController extends Controller
    
     public function user()
     {
+
+        
         $user = users::where('id', 1)->get();
 
         return view('user', ['user' => $user]);
