@@ -10,23 +10,23 @@ use Illuminate\Http\Request;
 class TripsController extends Controller
 {
    
+    public function index(){
+         //
+         $data = trips::with('category:id,category_name')->get();
+         $data2= category::all();
+         return view('admin.Trips', compact('data','data2'));
+
+    }
     public function enjoyment()
     {
-<<<<<<< HEAD
         
-=======
         $trips = trips::where('category_id', 3)->get();
 
         return view('tours', ['trips' => $trips]);
 
-        //
->>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
-        $data = trips::with('category:id,category_name')->get();
-        $data2= category::all();
-        return view('admin.Trips', compact('data','data2'));
+       
     }
 
-<<<<<<< HEAD
     /**
      * Show the form for creating a new resource.
      */
@@ -51,7 +51,6 @@ class TripsController extends Controller
 
         $trp->save();
         return redirect('/AdminTrips');    }
-=======
     public function medical()
     {
         $trips = trips::where('category_id', 4)->get();
@@ -59,7 +58,6 @@ class TripsController extends Controller
         return view('tours', ['trips' => $trips]);
 
     }
->>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
 
     public function archaeological()
     {
@@ -77,7 +75,6 @@ class TripsController extends Controller
 
     }
 
-<<<<<<< HEAD
     /**
      * Show the form for editing the specified resource.
      */
@@ -106,15 +103,14 @@ class TripsController extends Controller
             $trp->update();
             return redirect('/AdminTrips');
         }
+    }
 
-=======
 
     public function petradetails()
     {
         $trips = trips::where('trip_name', 'petra')->get();
 
         return view('details')->with('trips', $trips);
->>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
 
     }
 
@@ -126,7 +122,6 @@ class TripsController extends Controller
 
     }
 
-<<<<<<< HEAD
     /**
      * Remove the specified resource from storage.
      */
@@ -134,15 +129,13 @@ class TripsController extends Controller
     {
         $trp = trips::find($id);
         $trp->delete();
-        return redirect('/AdminTrips');  
-=======
+        return redirect('/AdminTrips');  }
     public function deaddetails()
     {
         $trips = trips::where('trip_name', 'Dead sea')->get();
 
         return view('details')->with('trips', $trips);
 
->>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
     }
 
     public function aqabadetails()

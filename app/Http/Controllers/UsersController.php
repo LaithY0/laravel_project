@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\users;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -10,16 +10,14 @@ class UsersController extends Controller
    
     public function user()
     {
-<<<<<<< HEAD
-        $data = User::all();
+        $data = users::all();
         return view('admin.Users', compact('data'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
-=======
+    public function create(Request $request){
         $user = users::where('id', 1)->get();
 
         return view('user', ['user' => $user]);
@@ -34,10 +32,9 @@ class UsersController extends Controller
     }
 
    
-    public function create()
->>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
+    public function createA(Request $request)
     {
-        $usr = new User();
+        $usr = new users();
         $usr->Fname    = $request->input('user_fname');
         $usr->Lname    = $request->input('user_lname');
         $usr->password    = $request->input('user_pass');
@@ -63,13 +60,12 @@ class UsersController extends Controller
         //
     }
 
-<<<<<<< HEAD
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id, $status)
+    public function editA($id, $status)
     {
-        $usr = User::find($id);
+        $usr = users::find($id);
         $usr->is_admin= $status;
         $usr->update();
         return redirect('/AdminUser');    }
@@ -77,20 +73,16 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update()
-    {
-        //
-    }
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy($id)
     {
-        $usr = User::find($id);
+        $usr = users::find($id);
         $usr->delete();
         return redirect('/AdminUser');    }
-=======
    
 //     public function update(Request $request, $id)
 // {
@@ -152,6 +144,5 @@ public function update(Request $request, $id)
     $user->save();
 
     return redirect('user');
->>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
 }
 }

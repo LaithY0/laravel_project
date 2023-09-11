@@ -6,7 +6,6 @@ use App\Http\Controllers\signup;
 use App\Http\Controllers\logIn_controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TripsController;
-use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReservatioController;
 use App\Http\Controllers\UsersController;
@@ -86,12 +85,10 @@ Route::get('/AdminAdd_users', function () {
     return view('admin.Add_users');
 });
 
-<<<<<<< HEAD
 Route::get('AdminUser', [UsersController::class, 'index'] );
 Route::post('adduse', [UsersController::class, 'create'] );
 Route::get('deleteusr/id/{id}', [UsersController::class, 'destroy'] );
 Route::get('updateusr/id/{id}/status/{status}', [UsersController::class, 'edit'] );
-=======
 //end admin routes
 
 Route::get('/about', function () {
@@ -101,7 +98,6 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
->>>>>>> b417459e21e312db732dbde6bc78d793b0bcff84
 
 
 
