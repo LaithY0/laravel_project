@@ -36,4 +36,23 @@
         </div>
     </div>
 </section>
+@foreach ($trips as $trip)
+<div class="project-wrap">
+       
+    <a href="#" class="img" style="background-image: url({{ $trip->photo}});"></a>
+    <div class="text p-4">
+        <span class="price">{{ $trip->price}} /person</span>
+        <span class="days">{{ $trip->days}}</span>
+        <h3><a href="#">{{ $trip->trip_name}}</a></h3>
+        
+        <ul>
+            <li><span class="flaticon-shower"></span>2</li>
+            <li><span class="flaticon-king-size"></span>3</li>
+            <li><span class="flaticon-mountains"></span>sea</li>
+        </ul>
+
+    </div>
+    
+</div>
+@endforeach
 @endsection

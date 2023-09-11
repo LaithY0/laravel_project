@@ -148,9 +148,5 @@ Route::get('/logout' , function(){
     return redirect()->route('login');
 })->name('logout');
 //search
-Route::get('/search' , [search_controller::class , 'index']);
+Route::get('/alltours' , [search_controller::class , 'index'])->name('alltours');
 Route::post('/search' , [search_controller::class , 'search']);
-Route::get('alltours' , function(){
-    return view('alltours');
-})->name('alltours');
-
