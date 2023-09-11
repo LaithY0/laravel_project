@@ -99,6 +99,11 @@ Route::get('/details', function () {
     return view('details');
 });
 
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
+
 Route::get('/home', function () {
     return view('home');
 })->name('home');
@@ -130,6 +135,7 @@ Route::get('/wadidetails',[TripsController::class, 'wadidetails']);
 Route::get('/user',[UsersController::class, 'user']);
 Route::get('/edit',[UsersController::class, 'edit']);
 Route::post('/update/{id}',[UsersController::class, 'update']);
+Route::post('/usertrup',[TripsController::class, 'usertrup']);
 
 
 //sign up toutes

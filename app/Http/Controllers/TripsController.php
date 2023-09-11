@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\trips;
 use App\Models\category;
-
+use App\Models\users;
 use Illuminate\Http\Request;
 
 class TripsController extends Controller
@@ -23,10 +23,7 @@ class TripsController extends Controller
     {
         $trips = trips::where('category_id', 1 )->get();
         foreach ( $trips as $trip){
-// if($trip->name=="petra"){
-//     <a href="Petra" class="img" style="background-image: url({{ $trips->photo}});"></a>
 
-// }elseif
         }
         return view('tours', ['trips' => $trips]);
 
@@ -36,7 +33,7 @@ class TripsController extends Controller
 
     public function medical()
     {
-        $trips = trips::where('category_id', 4)->get();
+        $trips = trips::where('category_id', 3)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -44,7 +41,7 @@ class TripsController extends Controller
 
     public function archaeological()
     {
-        $trips = trips::where('category_id', 3)->get();
+        $trips = trips::where('category_id', 2)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -52,7 +49,7 @@ class TripsController extends Controller
 
     public function religious()
     {
-        $trips = trips::where('category_id', 2)->get();
+        $trips = trips::where('category_id', 5)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -61,7 +58,7 @@ class TripsController extends Controller
 
     public function petradetails()
     {
-        $trips = trips::where('trip_name', 'petra')->get();
+        $trips = trips::where('trip_name', 'Petra')->get();
 
         return view('details')->with('trips', $trips);
 
@@ -108,5 +105,39 @@ class TripsController extends Controller
 
     }
    
+
+    public function usertrup(Request $req)
+{
+
+    $id = $req->trip_id;
+    $trip = trips::find($id); 
+
+    if (!$trip) {
+       
+        return "somthing wrong .!";
+    }
+    
+    return redirect('user')->with('trips', $trip);
+}
+
+
+// public function usertrup(Request $req)
+// {
+//     $id = $req->trip_id;
+//     $trip = trips::find($id); 
+
+//     if (!$trip) {
+//         return "Something went wrong!";
+//     }
+
+//     // Assuming you have a way to fetch user data, replace this with your logic
+//     $user = users::find($userId); // Replace User with your actual User model
+
+//     // Assuming you have a way to fetch trips for the user, replace this with your logic
+//     $trips = $user->trips; // Replace 'trips' with the relationship method you defined
+
+//     return view('user_profile', ['user' => $user, 'trips' => $trips]);
+// }
+
 
 }
