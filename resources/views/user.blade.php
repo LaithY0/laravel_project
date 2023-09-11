@@ -68,6 +68,8 @@
 
 @section('page')
 
+
+
 @foreach ($user as $user)
     
 <div class="profile-container">
@@ -76,10 +78,51 @@
     <div class="profile-name">{{$user->Fname}}  {{$user->Lname}}</div>
       <div class="profile-email">{{$user->email}}</div>
       <div class="profile-phone">{{$user->phone}}</div>
-
       <a href="edit" class="edit-button">Edit</a>
   </div>
 
   @endforeach
+
+  <div>
+    
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+              <th scope="col">Tour name </th>
+              <th scope="col">Data of the tour </th>
+              <th scope="col">Tour price </th>
+              <th scope="col">Days of tour </th>
+              <th scope="col">Number of the clients </th>
+              <th scope="col">Tour photo </th>
+      
+            </tr>
+          </thead>
+          <tbody>
+
+
+        
+            <tr>
+                <td>Petra </td>
+                <td>2023-10-10</td>
+                <td>120</td>
+                <td>5</td>
+                <td>20</td>
+                <td><img src="myimg/petra.jpg" alt="photo" height="150px"></td>
+            </tr>
+          </tbody>
+    </table>    
+
+
+  </div>
+
+
+
+
+@endsection
+    
+
+
+  
+ 
 
 
