@@ -34,14 +34,14 @@
 			<div class="row">
 				<div class="col-md-12 mb-5">
 					<div class="search-wrap-1 search-wrap-notop ftco-animate p-4">
-						<form action="#" class="search-property-1">
+						<form action="#" method="get" class="search-property-1">
 							<div class="row">
 								<div class="col-lg align-items-end">
 									<div class="form-group">
 										<label for="#">Destination</label>
 										<div class="form-field">
 											<div class="icon"><span class="ion-ios-search"></span></div>
-											<input type="text" class="form-control" placeholder="Search place">
+											<input type="text" class="form-control" placeholder="Search place" name="search">
 										</div>
 									</div>
 								</div>

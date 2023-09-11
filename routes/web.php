@@ -147,6 +147,7 @@ Route::get('/logout' , function(){
     }
     return redirect()->route('login');
 })->name('logout');
-
+//search
+Route::get('/search' , [search_controller::class , 'index']);
 
 
