@@ -15,7 +15,7 @@ class search_controller extends Controller
         
         if($search){
             $request->session()->put('search' , $search);
-            return redirect()->route('alltours');
+            return redirect()->route('book');
         }
         else{
             session()->pull('search');
@@ -23,15 +23,21 @@ class search_controller extends Controller
         }
     }
     public function index(){
-          
+
             if(session('search')){
                 $trips = trips::where('trip_name', 'like', '%' . session('search') . '%')->get();
             }
             else{
                 $trips = trips::all();
             }
-            return view('alltours' , ['trips' => $trips]);
+            return view('book' , ['trips' => $trips]);
             
     
 }
+    public function destroy(){
+        if(session()->has('search')){
+            session()->pull('search');
+        }
+        return view('home');
+    }
 }

@@ -104,9 +104,7 @@ Route::get('/contact', function () {
 
 
 
-Route::get('/book', function () {
-    return view('book');
-});
+
 
 Route::get('/details', function () {
     return view('details');
@@ -117,9 +115,7 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+
 
 Route::get('/categories', function () {
     return view('categories');
@@ -167,5 +163,9 @@ Route::get('/logout' , function(){
     return redirect()->route('login');
 })->name('logout');
 //search
-Route::get('/alltours' , [search_controller::class , 'index'])->name('alltours');
-Route::post('/search' , [search_controller::class , 'search']);
+Route::get('/book' , [search_controller::class , 'index'])->name('book');
+Route::post('/search' , [search_controller::class , 'search'])->name('search');
+// Route::get('/book', function () {
+//     return view('book');
+// })->name('book');
+Route::get('/home', [search_controller::class , 'destroy'])->name('home');
