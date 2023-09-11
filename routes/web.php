@@ -4,6 +4,7 @@ use App\Models\users;
 
 use App\Http\Controllers\signup;
 use App\Http\Controllers\logIn_controller;
+use App\Http\Controllers\LoginAdmin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TripsController;
 use App\Http\Controllers\CategoryController;
@@ -31,10 +32,10 @@ use App\Http\Controllers\UsersController;
 // php artisan serve --port=8001
 
 
-//admin routes
-Route::get('/admin', function () {
-    return view('admin.Login');
-});
+
+
+Route::get('admin', [LoginAdmin::class, 'index'] );
+Route::post('logadmin', [LoginAdmin::class, 'check'] );
 
 
 // Route::get('/AdminUser', function () {
@@ -45,9 +46,7 @@ Route::get('/AdminAccount', function () {
     return view('admin.Account');
 });
 
-Route::get('/AdminLogin', function () {
-    return view('admin.Login');
-});
+
 
 Route::get('/AdminIndex', function () {
     return view('admin.Index');
@@ -86,9 +85,9 @@ Route::get('/AdminAdd_users', function () {
 });
 
 Route::get('AdminUser', [UsersController::class, 'index'] );
-Route::post('adduse', [UsersController::class, 'create'] );
+Route::post('adduse', [UsersController::class, 'createA'] );
 Route::get('deleteusr/id/{id}', [UsersController::class, 'destroy'] );
-Route::get('updateusr/id/{id}/status/{status}', [UsersController::class, 'edit'] );
+Route::get('updateusr/id/{id}/status/{status}', [UsersController::class, 'editA'] );
 //end admin routes
 
 Route::get('/about', function () {
@@ -111,7 +110,7 @@ Route::get('/details', function () {
     return view('details');
 });
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 })->name('home');
 

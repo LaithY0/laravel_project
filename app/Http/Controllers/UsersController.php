@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
    
-    public function user()
+    public function index()
     {
         $data = users::all();
         return view('admin.Users', compact('data'));
@@ -37,7 +37,7 @@ class UsersController extends Controller
         $usr = new users();
         $usr->Fname    = $request->input('user_fname');
         $usr->Lname    = $request->input('user_lname');
-        $usr->password    = $request->input('user_pass');
+        $usr->password    = bcrypt($request->input('user_pass'));
         $usr->email    = $request->input('user_email');
         $usr->phone    = $request->input('user_phone');
         $usr->save();
