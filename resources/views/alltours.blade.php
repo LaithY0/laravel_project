@@ -1,6 +1,7 @@
 @extends('layout.master')
 @section('page')
-<section class="ftco-section ftco-no-pb ftco-no-pt">
+
+<section class="ftco-section ftco-no-pb ftco-no-pt" style='margin-top: 7rem;'>
     <div class="container">
         <div class="row">
             <div class="col-md-12 mb-5">
@@ -36,6 +37,12 @@
         </div>
     </div>
 </section>
+<form action="" method="post">
+    <option value="price"></option>
+    <option value="date"></option>
+    <option value=""></option>
+    <option value=""></option>
+</form>
 @foreach ($trips as $trip)
 <div class="project-wrap">
        
