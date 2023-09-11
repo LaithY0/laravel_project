@@ -6,10 +6,11 @@ use App\Http\Controllers\signup;
 use App\Http\Controllers\logIn_controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TripsController;
-use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReservatioController;
 use App\Http\Controllers\search_controller;
+use App\Http\Controllers\UsersController;
+
 
 
 /*
@@ -37,9 +38,9 @@ Route::get('/admin', function () {
 });
 
 
-Route::get('/AdminUser', function () {
-    return view('admin.Users');
-});
+// Route::get('/AdminUser', function () {
+//     return view('admin.Users');
+// });
 
 Route::get('/AdminAccount', function () {
     return view('admin.Account');
@@ -64,6 +65,13 @@ Route::get('deleteCat/id/{id}', [CategoryController::class, 'destroy'] );
 
 
 Route::get('AdminTrips', [TripsController::class, 'index'] );
+Route::post('addtrp', [TripsController::class, 'create'] );
+Route::post('updatetrp', [TripsController::class, 'edit'] );
+Route::get('deletetrp/id/{id}', [TripsController::class, 'destroy'] );
+
+
+
+
 
 
 Route::get('AdminOrders', [ReservatioController::class, 'index'] );
@@ -78,6 +86,10 @@ Route::get('/AdminAdd_users', function () {
     return view('admin.Add_users');
 });
 
+Route::get('AdminUser', [UsersController::class, 'index'] );
+Route::post('adduse', [UsersController::class, 'create'] );
+Route::get('deleteusr/id/{id}', [UsersController::class, 'destroy'] );
+Route::get('updateusr/id/{id}/status/{status}', [UsersController::class, 'edit'] );
 //end admin routes
 
 Route::get('/about', function () {
@@ -99,6 +111,11 @@ Route::get('/book', function () {
 Route::get('/details', function () {
     return view('details');
 });
+
+Route::get('/', function () {
+    return view('home');
+})->name('home');
+
 
 Route::get('/home', function () {
     return view('home');
@@ -131,6 +148,8 @@ Route::get('/wadidetails',[TripsController::class, 'wadidetails']);
 Route::get('/user',[UsersController::class, 'user']);
 Route::get('/edit',[UsersController::class, 'edit']);
 Route::post('/update/{id}',[UsersController::class, 'update']);
+Route::post('/usertrup',[TripsController::class, 'usertrup']);
+
 
 //sign up toutes
 Route::get('/signup', [signup::class , 'index'])->name('signup');
