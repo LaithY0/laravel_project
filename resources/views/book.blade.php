@@ -2,6 +2,7 @@
 
 @section('title' , 'Booking')
 
+<br><br>
 
 @section('page')
     
@@ -25,7 +26,6 @@
                             <div class="col-lg align-items-end">
 
                             </div>
-
 
                             <div class="col-lg align-self-end">
                                 <div class="form-group">

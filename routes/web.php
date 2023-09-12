@@ -10,8 +10,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReservatioController;
 use App\Http\Controllers\search_controller;
 use App\Http\Controllers\UsersController;
-
-
+use App\Models\category;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,9 +109,7 @@ Route::get('/details', function () {
     return view('details');
 });
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [CategoryController::class , 'categ'] );
 
 
 
@@ -145,6 +142,8 @@ Route::get('/user',[UsersController::class, 'user']);
 Route::get('/edit',[UsersController::class, 'edit']);
 Route::post('/update/{id}',[UsersController::class, 'update']);
 Route::post('/usertrup',[TripsController::class, 'usertrup']);
+
+
 
 
 //sign up toutes

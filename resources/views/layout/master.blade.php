@@ -37,7 +37,7 @@
   
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="home" class="nav-link">HOME</a></li>
+            <li class="nav-item active"><a href="/" class="nav-link">HOME</a></li>
             <li class="nav-item"><a href="categories" class="nav-link">CATEGORIES</a></li>
             <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
             <li class="nav-item"><a href="about" class="nav-link">ABOUT US</a></li>
