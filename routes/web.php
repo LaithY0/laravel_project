@@ -42,52 +42,52 @@ Route::post('logadmin', [LoginAdmin::class, 'check'] );
 //     return view('admin.Users');
 // });
 
-Route::get('/AdminAccount', function () {
-    return view('admin.Account');
-});
 
 
-
-Route::get('/AdminIndex', function () {
-    return view('admin.Index');
-});
-
-
-
-Route::get('AdminCategories', [CategoryController::class, 'index'] );
-Route::post('addCat', [CategoryController::class, 'create'] );
-Route::post('updateCat', [CategoryController::class, 'edit'] );
-Route::get('deleteCat/id/{id}', [CategoryController::class, 'destroy'] );
+Route::get('AdminAccount', [UsersController::class, 'userAdmin'] )->middleware('admin');
 
 
 
 
-Route::get('AdminTrips', [TripsController::class, 'index'] );
-Route::post('addtrp', [TripsController::class, 'create'] );
-Route::post('updatetrp', [TripsController::class, 'edit'] );
-Route::get('deletetrp/id/{id}', [TripsController::class, 'destroy'] );
+Route::get('AdminIndex', [ReservatioController::class, 'total'] )->middleware('admin');
 
+
+Route::get('AdminCategories', [CategoryController::class, 'index'] )->middleware('admin');
+Route::post('addCat', [CategoryController::class, 'create'] )->middleware('admin');
+Route::post('updateCat', [CategoryController::class, 'edit'] )->middleware('admin');
+Route::get('deleteCat/id/{id}', [CategoryController::class, 'destroy'] )->middleware('admin');
+
+
+
+
+Route::get('AdminTrips', [TripsController::class, 'index'] )->middleware('admin');
+Route::post('addtrp', [TripsController::class, 'create'] )->middleware('admin');
+Route::post('updatetrp', [TripsController::class, 'edit'] )->middleware('admin');
+Route::get('deletetrp/id/{id}', [TripsController::class, 'destroy'] )->middleware('admin');
 
 
 
 
 
-Route::get('AdminOrders', [ReservatioController::class, 'index'] );
-Route::post('addres', [ReservatioController::class, 'create'] );
-Route::post('editres', [ReservatioController::class, 'update'] );
-Route::get('updateres/id/{id}/status/{status}', [ReservatioController::class, 'edit'] );
-Route::get('deleteRes/id/{id}', [ReservatioController::class, 'destroy'] );
+
+Route::get('AdminOrders', [ReservatioController::class, 'index'] )->middleware('admin');
+Route::post('addres', [ReservatioController::class, 'create'] )->middleware('admin');
+Route::post('editres', [ReservatioController::class, 'update'] )->middleware('admin');
+Route::get('updateres/id/{id}/status/{status}', [ReservatioController::class, 'edit'] )->middleware('admin');
+Route::get('deleteRes/id/{id}', [ReservatioController::class, 'destroy'] )->middleware('admin');
 
 
 
 Route::get('/AdminAdd_users', function () {
     return view('admin.Add_users');
-});
+})->middleware('admin');
 
-Route::get('AdminUser', [UsersController::class, 'index'] );
-Route::post('adduse', [UsersController::class, 'createA'] );
-Route::get('deleteusr/id/{id}', [UsersController::class, 'destroy'] );
-Route::get('updateusr/id/{id}/status/{status}', [UsersController::class, 'editA'] );
+Route::get('AdminUser', [UsersController::class, 'index'] )->middleware('admin');
+Route::post('adduse', [UsersController::class, 'createA'] )->middleware('admin');
+Route::get('deleteusr/id/{id}', [UsersController::class, 'destroy'] )->middleware('admin');
+Route::get('updateusr/id/{id}/status/{status}', [UsersController::class, 'editA'] )->middleware('admin');
+Route::get('logoutAdmin', [UsersController::class, 'logoutAdmin'] );
+
 //end admin routes
 
 Route::get('/about', function () {
@@ -113,7 +113,9 @@ Route::get('/details', function () {
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
+Route::get('/home', function () {
+    return view('home');
+});
 Route::get('/categories', function () {
     return view('categories');
 });

@@ -29,8 +29,8 @@ class LoginAdmin extends Controller
     
             // Check if the user is an admin
             if ($user && $user->is_admin == 1) {
-                $request->session()->put('admin', $user->id);
-                return redirect('/AdminCategories');   
+                session()->put('admin', $user->id);
+                return redirect('/AdminIndex');   
             } else {
                 return redirect('admin')->with('message', 'You are not an admin.');
             }

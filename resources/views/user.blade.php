@@ -68,7 +68,6 @@
 
 @section('page')
 
-@foreach ($user as $user)
     
 <div class="profile-container">
     <h2>Profile </h2>
@@ -79,7 +78,6 @@
       <a href="edit" class="edit-button">Edit</a>
   </div>
 
-  @endforeach
 
 @endsection
     

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\users;
+use App\Models\reservation;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -12,6 +15,17 @@ class UsersController extends Controller
     {
         $data = users::all();
         return view('admin.Users', compact('data'));
+    }
+
+    public function user(){
+        $user = Auth::user();
+        return view('user', compact('user'));
+
+    }
+    public function userAdmin(){
+        $user = Auth::user();
+        return view('admin.Account', compact('user'));
+
     }
 
     /**
@@ -81,6 +95,12 @@ class UsersController extends Controller
     public function destroy($id)
     {
         $usr = users::find($id);
+        $relatedRes = reservation::where('user_id', $usr->id)->count();
+
+        if ($relatedRes > 0) {
+            // There are related trips, so display an error message
+            return redirect()->back()->with('error1', 'Cannot delete this user until all related reservation are deleted.');
+        }
         $usr->delete();
         return redirect('/AdminUser');    }
    
@@ -144,5 +164,12 @@ public function update(Request $request, $id)
     $user->save();
 
     return redirect('user');
+}
+
+public function logoutAdmin(){
+    if(session()->has('admin')){
+        session()->pull('admin');
+    }
+    return redirect('admin');
 }
 }

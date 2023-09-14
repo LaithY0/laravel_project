@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\trips;
 use App\Models\category;
+use App\Models\reservation;
 
 use Illuminate\Http\Request;
 
@@ -128,8 +129,22 @@ class TripsController extends Controller
     public function destroy($id)
     {
         $trp = trips::find($id);
+        $relatedRes = reservation::where('trip_id', $trp->id)->count();
+
+        if ($relatedRes > 0) {
+            // There are related trips, so display an error message
+            return redirect()->back()->with('error1', 'Cannot delete this Trip until all related reservation are deleted.');
+        }  
         $trp->delete();
         return redirect('/AdminTrips');  }
+
+
+
+
+
+
+
+        
     public function deaddetails()
     {
         $trips = trips::where('trip_name', 'Dead sea')->get();

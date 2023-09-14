@@ -32,6 +32,11 @@
 					</div>
 					<h2 class="auth-heading text-center mb-5">Log in to Admin Dashboard</h2>
 					<div class="auth-form-container text-start">
+					@if(session('fail'))
+							<div class="alert alert-info m-5">
+								{{ session('fail') }}
+							</div>
+							@endif
 						<form class="auth-form login-form" method="POST" action="logadmin">
 							@csrf
 							<div class="email mb-3">
