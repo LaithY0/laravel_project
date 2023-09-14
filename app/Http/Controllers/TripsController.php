@@ -6,31 +6,24 @@ use App\Models\trips;
 use App\Models\category;
 use App\Models\reservation;
 
+use App\Models\users;
 use Illuminate\Http\Request;
 
 class TripsController extends Controller
 {
    
-    public function index(){
-         //
-         $data = trips::with('category:id,category_name')->get();
-         $data2= category::all();
-         return view('admin.Trips', compact('data','data2'));
 
-    }
-    public function enjoyment()
-    {
-        
-        $trips = trips::where('category_id', 3)->get();
+    public function index (){
 
-        return view('tours', ['trips' => $trips]);
-
-       
+        $data = trips::with('category:id,category_name')->get();
+        $data2= category::all();
+        return view('admin.Trips', compact('data','data2'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
+
+
+    
     public function create(Request $request)
     {
         $trp = new trips();
@@ -52,9 +45,24 @@ class TripsController extends Controller
 
         $trp->save();
         return redirect('/AdminTrips');    }
+
+
+
+    public function enjoyment()
+    {
+        $trips = trips::where('category_id', 1 )->get();
+        foreach ( $trips as $trip){
+
+        }
+        return view('tours', ['trips' => $trips]);
+
+        
+       
+    }
+
     public function medical()
     {
-        $trips = trips::where('category_id', 4)->get();
+        $trips = trips::where('category_id', 3)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -62,7 +70,7 @@ class TripsController extends Controller
 
     public function archaeological()
     {
-        $trips = trips::where('category_id', 1)->get();
+        $trips = trips::where('category_id', 2)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -70,46 +78,16 @@ class TripsController extends Controller
 
     public function religious()
     {
-        $trips = trips::where('category_id', 2)->get();
+        $trips = trips::where('category_id', 5)->get();
 
         return view('tours', ['trips' => $trips]);
 
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Request $request)
-    {
-        $id = $request->input('id');
-        $trp = trips::find($id);
-        $trp->trip_name = $request->input('trip_name');
-        $trp->price = $request->input('trip_price');
-        $trp->date = $request->input('trip_date');
-        $trp->clients = $request->input('trip_clients');
-        if ($request->file('trip_img')) {
-            $img = $request->file('trip_img');
-            $imgname = $img->getClientOriginalName();
-            $img->move(public_path('assetsAdmin/images'), $imgname);
-            $trp->photo = $imgname;
-
-            $trp->days = $request->input('trip_days');
-            $trp->details = $request->input('trip_details');
-            $trp->category_id = $request->input('categories_id');
-
-
-
-
-
-            $trp->update();
-            return redirect('/AdminTrips');
-        }
-    }
-
 
     public function petradetails()
     {
-        $trips = trips::where('trip_name', 'petra')->get();
+        $trips = trips::where('trip_name', 'Petra')->get();
 
         return view('details')->with('trips', $trips);
 
@@ -178,5 +156,68 @@ class TripsController extends Controller
 
     }
    
+
+    public function usertrup(Request $req)
+{
+
+    // $id = $req->trip_id;
+    // $trip = trips::find($id)->get()->first(); 
+
+    // if (!$trip) {
+       
+    //     return "somthing wrong .!";
+    // }
+    
+
+    
+    return view('user');
+}
+
+
+// public function usertrup(Request $req)
+// {
+//     $id = $req->trip_id;
+//     $trip = trips::find($id); 
+
+//     if (!$trip) {
+//         return "Something went wrong!";
+//     }
+
+//     // Assuming you have a way to fetch user data, replace this with your logic
+//     $user = users::find($userId); // Replace User with your actual User model
+
+//     // Assuming you have a way to fetch trips for the user, replace this with your logic
+//     $trips = $user->trips; // Replace 'trips' with the relationship method you defined
+
+//     return view('user_profile', ['user' => $user, 'trips' => $trips]);
+// }
+public function edit(Request $request)
+{
+    $id = $request->input('id');
+    $trp = trips::find($id);
+    $trp->trip_name = $request->input('trip_name');
+    $trp->price = $request->input('trip_price');
+    $trp->date = $request->input('trip_date');
+    $trp->clients = $request->input('trip_clients');
+    if ($request->file('trip_img')) {
+        $img = $request->file('trip_img');
+        $imgname = $img->getClientOriginalName();
+        $img->move(public_path('assetsAdmin/images'), $imgname);
+        $trp->photo = $imgname;}
+
+        $trp->days = $request->input('trip_days');
+        $trp->details = $request->input('trip_details');
+        $trp->category_id = $request->input('categories_id');
+
+
+
+
+
+        $trp->update();
+        return redirect('/AdminTrips');
+    
+
+
+}
 
 }

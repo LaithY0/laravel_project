@@ -20,15 +20,14 @@
   </div>
 </div>
 
-
-
+<div style="display: flex;flex-wrap: wrap;">
 @foreach ( $trips as $trips)
 
 
 <div class="col-md-4 ftco-animate">
     <div class="project-wrap">
-       
-        <a href="#" class="img" style="background-image: url({{ $trips->photo}});"></a>
+    
+        <a href="{{ $trips->href}}" class="img" style="background-image: url({{ $trips->photo}});"></a>
         <div class="text p-4">
             <span class="price">{{ $trips->price}} /person</span>
             <span class="days">{{ $trips->days}}</span>
@@ -50,7 +49,7 @@
 
 @endforeach
 
-
+</div>
 
 </section>
 

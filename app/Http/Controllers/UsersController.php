@@ -13,9 +13,10 @@ class UsersController extends Controller
    
     public function index()
     {
-        $data = users::all();
-        return view('admin.Users', compact('data'));
-    }
+     $data= users::all();
+     return view('admin.Users',compact('data'));
+ 
+}
 
     public function user(){
         $user = Auth::user();
@@ -32,6 +33,7 @@ class UsersController extends Controller
      * Show the form for creating a new resource.
      */
     public function create(Request $request){
+        
         $user = users::where('id', 1)->get();
 
         return view('user', ['user' => $user]);

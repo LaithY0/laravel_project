@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-floating">
                     <label for="email">Phone Number</label>
-                    <input type="text" class="form-control" id="email" placeholder="Enter your Email" name="phone">
+                    <input type="text" class="form-control" id="email" placeholder="Enter your phone" name="phone">
                     @if ($errors->has('phone'))
                     <p class="alert alert-danger ">{{ $errors->first('phone') }}</p>
                     @endif
@@ -105,7 +105,7 @@
                     <button type="submit" class="btn btn-primary">Create an account</button>
                 </div>
 
-                <div class="mb-2">Already a member? <a href="login.html"><span style="color: #fd7e14;"> Log in </span> </a></div>
+                <div class="mb-2">Already a member? <a href="{{route('login')}}"><span style="color: #fd7e14;"> Log in </span> </a></div>
 
               
 

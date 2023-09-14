@@ -34,13 +34,14 @@ class CategoryController extends Controller
         return redirect('/AdminCategories');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  
+    // public function categ()
+    // {
+    //     $cat = category::all();
+
+       
+    //     return view('home' , ['cat' => $cat]);
+    // }
 
     /**
      * Display the specified resource.
