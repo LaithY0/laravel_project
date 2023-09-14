@@ -32,13 +32,14 @@ class CategoryController extends Controller
         return redirect('/AdminCategories');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+  
+    // public function categ()
+    // {
+    //     $cat = category::all();
+
+       
+    //     return view('home' , ['cat' => $cat]);
+    // }
 
     /**
      * Display the specified resource.
@@ -63,6 +64,7 @@ class CategoryController extends Controller
             $img->move(public_path('assetsAdmin/images'), $imgname);
             $cat->category_picture = $imgname;
         }
+        
         $cat->update();
         return redirect('/AdminCategories');
     }
