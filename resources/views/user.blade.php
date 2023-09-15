@@ -114,14 +114,8 @@
 
   </div>
 
-
+@endforeach
 
 
 @endsection
     
-
-
-  
- 
-
-
