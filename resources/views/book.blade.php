@@ -226,7 +226,7 @@
         
             <div class="col-md-4 ftco-animate">
                 <div class="project-wrap">
-                    <a href="petradetails" class="img" style="background-image: url({{$trip->photo}});"></a>
+                    <div class="img" style="background-image: url({{$trip->photo}});"></div>
                     <div class="text p-4">
                         <span class="price">{{$trip->price}}</span>
                         <span class="days">{{$trip->days}}</span>
@@ -235,7 +235,7 @@
                         <ul>
                             <li><span class="flaticon-shower"></span>0</li>
                             <li><span class="flaticon-king-size"></span>0</li>
-                            <li><span class="flaticon-mountains"><a href="{{$trip->href}}">details</a></li>
+                            <li><span class="flaticon-mountains"><a href="{{route('details' , $trip->id)}}">details</a></li>
                         </ul>
                     </div>
                 </div>

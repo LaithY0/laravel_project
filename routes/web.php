@@ -2,16 +2,17 @@
 
 use App\Models\users;
 
+use App\Models\category;
 use App\Http\Controllers\signup;
-use App\Http\Controllers\logIn_controller;
+use App\Http\Controllers\details;
 use App\Http\Controllers\LoginAdmin;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TripsController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\logIn_controller;
+use App\Http\Controllers\search_controller;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ReservatioController;
-use App\Http\Controllers\search_controller;
-use App\Http\Controllers\UsersController;
-use App\Models\category;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,16 +102,6 @@ Route::get('/contact', function () {
 
 
 
-
-
-
-Route::get('/details', function () {
-    return view('details');
-});
-
-Route::get('/', function () {
-    return view('home');
-})->name('home');
 Route::get('/home', function () {
     return view('home');
 });
@@ -122,8 +113,6 @@ Route::get('/categories', function () {
 Route::get('/tours', function () {
     return view('tours');
 })->name('tours');
-
-
 
 
 
@@ -164,10 +153,7 @@ Route::get('/logout' , function(){
 //search
 Route::get('/book' , [search_controller::class , 'index'])->name('book');
 Route::post('/search' , [search_controller::class , 'search'])->name('search');
-// Route::get('/book', function () {
-//     return view('book');
-// })->name('book');
-Route::get('/home', [search_controller::class , 'destroy'])->name('home');
-Route::get('/' , function(){
-    return view('home');
-})->name('home');
+
+Route::get('/', [search_controller::class , 'destroy'])->name('home');
+Route::get('/details', [details::class , 'index']);
+Route::get('/details/{id}' , [details::class , 'get'])->name('details');
