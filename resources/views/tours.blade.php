@@ -1,8 +1,11 @@
 @extends('layout.master')
 
 @section('title' , 'Categories')
-
-
+@section('style')
+<style>
+    
+</style>
+@endsection
 @section('page')
     
 
@@ -20,7 +23,7 @@
   </div>
 </div>
 
-<div style="display: flex;flex-wrap: wrap;">
+<div class="tours">
 @foreach ( $trips as $trips)
 
 

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class logIn_controller extends Controller
 {
     public function index(){
+       
         return view('login');
     }
 

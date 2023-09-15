@@ -8,7 +8,12 @@ use Illuminate\Http\Request;
 class search_controller extends Controller
 {
   
-
+    public function destroy(){
+        if(session()->has('search')){
+            session()->pull('search');
+        }
+        return view('home');
+    }
     
     public function search(Request $request){
         $search = $request->input('search');
@@ -34,10 +39,5 @@ class search_controller extends Controller
             
     
 }
-    public function destroy(){
-        if(session()->has('search')){
-            session()->pull('search');
-        }
-        return view('home');
-    }
+
 }
