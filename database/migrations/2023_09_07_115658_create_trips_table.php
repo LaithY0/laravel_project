@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('trip_name' , 255);
             $table->integer('price');
-            $table->date('date');
+            $table->date('day1');
+            $table->date('day2');
+            $table->date('day3');
             $table->integer('clients');
             $table->string('photo' , 255);
             $table->string('days' , 255);

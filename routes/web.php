@@ -157,3 +157,6 @@ Route::post('/search' , [search_controller::class , 'search'])->name('search');
 Route::get('/', [search_controller::class , 'destroy'])->name('home');
 Route::get('/details', [details::class , 'index']);
 Route::get('/details/{id}' , [details::class , 'get'])->name('details');
+Route::post('/reservations_trips' , function(){
+    return view('user');
+})->name('user');
