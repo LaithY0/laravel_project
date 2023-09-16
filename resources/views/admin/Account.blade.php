@@ -50,9 +50,10 @@
 											<div class="item-label"><strong>Name</strong></div>
 											<div class="item-data">{{$user->Fname}} {{$user->Lname}}</div>
 										</div><!--//col-->
-										<div class="col text-end">
+										<!-- <div class="col text-end">
 											<a class="btn-sm app-btn-secondary" href="#">Change</a>
-										</div><!--//col-->
+										</div> -->
+										<!--//col-->
 									</div><!--//row-->
 								</div><!--//item-->
 								<div class="item border-bottom py-3">
@@ -61,9 +62,10 @@
 											<div class="item-label"><strong>Email</strong></div>
 											<div class="item-data">{{$user->email}}</div>
 										</div><!--//col-->
-										<div class="col text-end">
+										<!-- <div class="col text-end">
 											<a class="btn-sm app-btn-secondary" href="#">Change</a>
-										</div><!--//col-->
+										</div> -->
+										<!--//col-->
 									</div><!--//row-->
 								</div><!--//item-->
 								<!-- <div class="item border-bottom py-3">
@@ -88,15 +90,17 @@
 											{{$user->phone}}
 											</div>
 										</div><!--//col-->
-										<div class="col text-end">
+										<!-- <div class="col text-end">
 											<a class="btn-sm app-btn-secondary" href="#">Change</a>
-										</div><!--//col-->
+										</div> -->
+										<!--//col-->
 									</div><!--//row-->
 								</div><!--//item-->
 							</div><!--//app-card-body-->
-							<div class="app-card-footer p-4 mt-auto">
+							<!-- <div class="app-card-footer p-4 mt-auto">
 								<a class="btn app-btn-secondary" href="#">Save</a>
-							</div><!--//app-card-footer-->
+							</div> -->
+							<!--//app-card-footer-->
 
 						</div><!--//app-card-->
 					</div><!--//col-->
