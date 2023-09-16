@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('reservatios', function (Blueprint $table) {
             $table->id();
-            $table->date('reservation_date');
+            $table->date('trips_days');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('trip_id')->constrained('trips');
-            $table->string('payment_status');
+            $table->string('payment_status')->default('pending');
             $table->timestamps();
         });
     }

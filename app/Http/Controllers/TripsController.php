@@ -85,72 +85,21 @@ class TripsController extends Controller
     }
 
 
-    public function petradetails()
-    {
-        $trips = trips::where('trip_name', 'Petra')->get();
+    // public function petradetails()
+    // {
+    //     $trips = trips::where('trip_name', 'Petra')->get();
 
-        return view('details')->with('trips', $trips);
+    //     return view('details')->with('trips', $trips);
+
+    // }
+
+    public function ummdetails()
+    {
+        $trips = trips::where('trip_name', 'Umm Qais, Irbid')->get();
+
+    //     return view('details')->with('trips', $trips);
 
     }
-
-    public function karkdetails()
-    {
-        $trips = trips::where('trip_name', 'Karak Castle')->get();
-
-        return view('details')->with('trips', $trips);
-
-    }
-
-
-    public function jrshdetails()
-    {
-        $trips = trips::where('trip_name', 'Jerash pillars')->get();
-
-        return view('details')->with('trips', $trips);
-
-    }
-
-    
-    public function afradet()
-    {
-        $trips = trips::where('trip_name', 'Afra Hot Springs Chalets in At-Tafilah')->get();
-
-        return view('details')->with('trips', $trips);
-
-    }
-
-
-    public function hammdet()
-    {
-        $trips = trips::where('trip_name', 'Hammamet Main Madaba')->get();
-
-        return view('details')->with('trips', $trips);
-    }
-
-    public function audsdet()
-    {
-        $trips = trips::where('trip_name', 'Al quds')->get();
-
-        return view('details')->with('trips', $trips);
-
-    }
-
-    public function makkahdet()
-    {
-        $trips = trips::where('trip_name', 'Makkah')->get();
-
-        return view('details')->with('trips', $trips);
-
-    }
-
-    public function alqiamadet()
-    {
-        $trips = trips::where('trip_name', 'Alqiama charch')->get();
-
-        return view('details')->with('trips', $trips);
-
-    }
-
 
     /**
      * Remove the specified resource from storage.
@@ -174,38 +123,38 @@ class TripsController extends Controller
 
 
         
-    public function deaddetails()
-    {
-        $trips = trips::where('trip_name', 'Dead sea')->get();
+    // public function deaddetails()
+    // {
+    //     $trips = trips::where('trip_name', 'Dead sea')->get();
 
-        return view('details')->with('trips', $trips);
+    //     return view('details')->with('trips', $trips);
 
-    }
+    // }
 
-    public function aqabadetails()
-    {
-        $trips = trips::where('trip_name', 'Aqaba')->get();
+    // public function aqabadetails()
+    // {
+    //     $trips = trips::where('trip_name', 'Aqaba')->get();
 
-        return view('details')->with('trips', $trips);
+    //     return view('details')->with('trips', $trips);
 
-    }
+    // }
 
-    public function ammandetails()
-    {
-        $trips = trips::where('trip_name', 'Amman')->get();
+    // public function ammandetails()
+    // {
+    //     $trips = trips::where('trip_name', 'Amman')->get();
 
-        return view('details')->with('trips', $trips);
+    //     return view('details')->with('trips', $trips);
 
-    }
+    // }
 
     
-    public function wadidetails()
-    {
-        $trips = trips::where('trip_name', 'Wadi Rum')->get();
+    // public function wadidetails()
+    // {
+    //     $trips = trips::where('trip_name', 'Wadi Rum')->get();
 
-        return view('details')->with('trips', $trips);
+    //     return view('details')->with('trips', $trips);
 
-    }
+    // }
    
 
     public function usertrup(Request $req)
