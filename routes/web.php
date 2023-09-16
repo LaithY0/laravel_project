@@ -127,21 +127,29 @@ Route::get('/tours', function () {
 
 
 
-
+Route::get('userp', [UsersController::class, 'userp'] );
 Route::get('/enjoyment',[TripsController::class, 'enjoyment']);
 Route::get('/medical',[TripsController::class, 'medical']);
 Route::get('/archaeological',[TripsController::class, 'archaeological']);
 Route::get('/religious',[TripsController::class, 'religious']);
 Route::get('/petradetails',[TripsController::class, 'petradetails']);
 Route::get('/deaddetails',[TripsController::class, 'deaddetails']);
-Route::get('/ummdetails',[TripsController::class, 'ummdetails']);
 Route::get('/ammandetails',[TripsController::class, 'ammandetails']);
 Route::get('/aqabadetails',[TripsController::class, 'aqabadetails']);
 Route::get('/wadidetails',[TripsController::class, 'wadidetails']);
+Route::get('/karkdetails',[TripsController::class, 'karkdetails']);
+Route::get('/jrshdetails',[TripsController::class, 'jrshdetails']);
+Route::get('/afradet',[TripsController::class, 'afradet']);
+Route::get('/hammdet',[TripsController::class, 'hammdet']);
+Route::get('/audsdet',[TripsController::class, 'audsdet']);
+Route::get('/makkahdet',[TripsController::class, 'makkahdet']);
+Route::get('/alqiamadet',[TripsController::class, 'alqiamadet']);
 Route::get('/user',[UsersController::class, 'user']);
 Route::get('/edit',[UsersController::class, 'edit']);
-Route::post('/update/{id}',[UsersController::class, 'update']);
+Route::post('/update/{id}',[UsersController::class, 'updateuser']);
 Route::post('/usertrup',[TripsController::class, 'usertrup']);
+Route::put('/user/{id}/edit',[UsersController::class, 'useredit']);
+
 
 
 

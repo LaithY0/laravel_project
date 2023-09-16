@@ -43,7 +43,7 @@ data-stellar-background-ratio="0.5">
 <div class="row">
     <div class="col-md-3 ftco-animate">
         <div class="project-destination">
-            <a href="#" class="img" style="background-image: url(myimg/place1.jpg);">
+            <a href="archaeological" class="img" style="background-image: url(myimg/place1.jpg);">
                 <div class="text">
                     <h3>Archaeological Tours</h3>
                     <span>View All Tours</span>
@@ -53,7 +53,7 @@ data-stellar-background-ratio="0.5">
     </div>
     <div class="col-md-3 ftco-animate">
         <div class="project-destination">
-            <a href="#" class="img" style="background-image: url(myimg/dead_sea.jpg);">
+            <a href="medical" class="img" style="background-image: url(myimg/dead_sea.jpg);">
                 <div class="text">
                     <h3>Medical Tourism</h3>
                     <span>View All Tours</span>
@@ -63,7 +63,7 @@ data-stellar-background-ratio="0.5">
     </div>
     <div class="col-md-3 ftco-animate">
         <div class="project-destination">
-            <a href="#" class="img" style="background-image: url(myimg/saraya-aqaba-waterpark.jpg);">
+            <a href="enjoyment" class="img" style="background-image: url(myimg/saraya-aqaba-waterpark.jpg);">
                 <div class="text">
                     <h3>Enjoyment Tours</h3>
                     <span>View All Tours</span>
@@ -73,7 +73,7 @@ data-stellar-background-ratio="0.5">
     </div>
     <div class="col-md-3 ftco-animate">
         <div class="project-destination">
-            <a href="#" class="img" style="background-image: url(myimg/Mount-Nebo-7.jpg);">
+            <a href="religious" class="img" style="background-image: url(myimg/Mount-Nebo-7.jpg);">
                 <div class="text">
                     <h3>Religious Tours </h3>
                     <span>View All Tours</span>

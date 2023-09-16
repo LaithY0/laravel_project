@@ -157,7 +157,7 @@
         	</div>
         	<div class="col-md-3 ftco-animate">
         		<div class="project-destination">
-        			<a href="enjoyment" class="img" style="background-image: url(myimg/saraya-aqaba-waterpark.jpg);">
+        			<a href="enjoyment" class="img" style="background-image: url(myimg/en.webp);">
         				<div class="text">
         					<h3>Enjoyment Tours</h3>
         					<span>View All Tours</span>
@@ -251,16 +251,16 @@
         	</div>
         	<div class="col-md-4 ftco-animate">
         		<div class="project-wrap">
-        			<a href="ummdetails" class="img" style="background-image: url(myimg/thumbs_b2_311f22c55a8405b4512844093d34b4f9.jpg);"></a>
+        			<a href="alqiamadet" class="img" style="background-image: url(myimg/ss.jpg);"></a>
         			<div class="text p-4">
-        				<span class="price">15JOD/person</span>
+        				<span class="price">15 JD/person</span>
         				<span class="days">1 Day Tour</span>
-        				<h3><a href="#">Umm Qais, Irbid</a></h3>
+        				<h3><a href="#">Al quds </a></h3>
         				
         				<ul>
         					<li><span class="flaticon-shower"></span>2</li>
         					<li><span class="flaticon-king-size"></span>3</li>
-        					<li><span class="flaticon-mountains"></span>Near Mountain</li>
+        					<li><span class="flaticon-mountains"></span>Palestine</li>
         				</ul>
         			</div>
         		</div>

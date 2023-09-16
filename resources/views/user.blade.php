@@ -73,11 +73,16 @@
     
 <div class="profile-container">
     <h2>Profile </h2>
-    <img src="{{ $user->photo }}" alt="User Photo" class="profile-image">
+    <img src="myimg/{{$user->photo}}" alt="User Photo" class="profile-image">
     <div class="profile-name">{{$user->Fname}}  {{$user->Lname}}</div>
       <div class="profile-email">{{$user->email}}</div>
       <div class="profile-phone">{{$user->phone}}</div>
-      <a href="edit" class="edit-button">Edit</a>
+      <form  action="{{ url('/user/' . $user->id . '/edit/') }}" method="POST">
+        @csrf
+        @method('put')
+        <input type="hidden" name="user_id" value="{{ $user->id }}">
+      <input type="submit" value="Edit" class="edit-button">
+      </form>
   </div>
 
 
@@ -113,14 +118,8 @@
 
   </div>
 
-
+@endforeach
 
 
 @endsection
     
-
-
-  
- 
-
-

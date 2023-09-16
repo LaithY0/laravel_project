@@ -50,7 +50,7 @@ class TripsController extends Controller
 
     public function enjoyment()
     {
-        $trips = trips::where('category_id', 1 )->get();
+        $trips = trips::where('category_id', 8 )->get();
         foreach ( $trips as $trip){
 
         }
@@ -62,7 +62,7 @@ class TripsController extends Controller
 
     public function medical()
     {
-        $trips = trips::where('category_id', 3)->get();
+        $trips = trips::where('category_id', 15)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -70,7 +70,7 @@ class TripsController extends Controller
 
     public function archaeological()
     {
-        $trips = trips::where('category_id', 2)->get();
+        $trips = trips::where('category_id', 10)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -78,7 +78,7 @@ class TripsController extends Controller
 
     public function religious()
     {
-        $trips = trips::where('category_id', 5)->get();
+        $trips = trips::where('category_id', 14)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -93,13 +93,64 @@ class TripsController extends Controller
 
     }
 
-    public function ummdetails()
+    public function karkdetails()
     {
-        $trips = trips::where('trip_name', 'Umm Qais, Irbid')->get();
+        $trips = trips::where('trip_name', 'Karak Castle')->get();
 
         return view('details')->with('trips', $trips);
 
     }
+
+
+    public function jrshdetails()
+    {
+        $trips = trips::where('trip_name', 'Jerash pillars')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
+    
+    public function afradet()
+    {
+        $trips = trips::where('trip_name', 'Afra Hot Springs Chalets in At-Tafilah')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
+
+    public function hammdet()
+    {
+        $trips = trips::where('trip_name', 'Hammamet Main Madaba')->get();
+
+        return view('details')->with('trips', $trips);
+    }
+
+    public function audsdet()
+    {
+        $trips = trips::where('trip_name', 'Al quds')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
+    public function makkahdet()
+    {
+        $trips = trips::where('trip_name', 'Makkah')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
+    public function alqiamadet()
+    {
+        $trips = trips::where('trip_name', 'Alqiama charch')->get();
+
+        return view('details')->with('trips', $trips);
+
+    }
+
 
     /**
      * Remove the specified resource from storage.
