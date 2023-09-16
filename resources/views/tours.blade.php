@@ -29,7 +29,7 @@
     
         <a href="{{ $trips->href}}" class="img" style="background-image: url({{ $trips->photo}});"></a>
         <div class="text p-4">
-            <span class="price">{{ $trips->price}} /person</span>
+            <span class="price">{{ $trips->price}} JD/person</span>
             <span class="days">{{ $trips->days}}</span>
             <h3><a href="#">{{ $trips->trip_name}}</a></h3>
             
