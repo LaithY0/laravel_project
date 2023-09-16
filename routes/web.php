@@ -50,6 +50,7 @@ Route::get('AdminAccount', [UsersController::class, 'userAdmin'] )->middleware('
 
 
 Route::get('AdminIndex', [ReservatioController::class, 'total'] )->middleware('admin');
+//Route::get('AdminIndex', [ReservatioController::class, 'total'] )->middleware('admin');
 
 
 Route::get('AdminCategories', [CategoryController::class, 'index'] )->middleware('admin');
@@ -178,4 +179,4 @@ Route::post('/search' , [search_controller::class , 'search']);
 Route::get('/home', [search_controller::class , 'destroy'])->name('home');
 Route::get('/' , function(){
     return view('home');
-})->name('home');
+});

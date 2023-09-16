@@ -95,6 +95,15 @@ class ReservatioController extends Controller
 
     public function total()
     {
+           ///function for table
+        //    $data5 = users::all();
+        //    $data6 = trips::all();
+           $users = users::latest()->take(6)->get();
+           $trips = trips::latest()->take(6)->get();
+
+
+
+
         $reservations = reservation::with('trip')->get();
         $totalPrice=0;
         foreach ($reservations as $reservation) {
@@ -104,10 +113,11 @@ class ReservatioController extends Controller
         $data = $totalPrice;
         $data2 = reservation::count();
         $data3 = users::count();
-        return view('admin.Index', compact('data','data2', 'data3'));
+        return view('admin.Index', compact('data','data2', 'data3' , 'users' , 'trips'));
 
 
 
 
     }
+    
 }
