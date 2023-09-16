@@ -127,7 +127,7 @@ Route::get('/tours', function () {
 
 
 
-
+Route::get('userp', [UsersController::class, 'userp'] );
 Route::get('/enjoyment',[TripsController::class, 'enjoyment']);
 Route::get('/medical',[TripsController::class, 'medical']);
 Route::get('/archaeological',[TripsController::class, 'archaeological']);
@@ -146,8 +146,10 @@ Route::get('/makkahdet',[TripsController::class, 'makkahdet']);
 Route::get('/alqiamadet',[TripsController::class, 'alqiamadet']);
 Route::get('/user',[UsersController::class, 'user']);
 Route::get('/edit',[UsersController::class, 'edit']);
-Route::post('/update/{id}',[UsersController::class, 'update']);
+Route::post('/update/{id}',[UsersController::class, 'updateuser']);
 Route::post('/usertrup',[TripsController::class, 'usertrup']);
+Route::put('/user/{id}/edit',[UsersController::class, 'useredit']);
+
 
 
 
