@@ -93,21 +93,21 @@ Route::get('logoutAdmin', [UsersController::class, 'logoutAdmin'] );
 
 Route::get('/about', function () {
     return view('about');
-});
+})->name('about');
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 
 
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
 Route::get('/categories', function () {
     return view('categories');
-});
+})->name('category');
 
 
 Route::get('/tours', function () {
@@ -135,7 +135,7 @@ Route::get('/hammdet',[TripsController::class, 'hammdet']);
 Route::get('/audsdet',[TripsController::class, 'audsdet']);
 Route::get('/makkahdet',[TripsController::class, 'makkahdet']);
 Route::get('/alqiamadet',[TripsController::class, 'alqiamadet']);
-Route::get('/user',[UsersController::class, 'user']);
+// Route::get('/user',[UsersController::class, 'user']);
 Route::get('/edit',[UsersController::class, 'edit']);
 Route::post('/update/{id}',[UsersController::class, 'updateuser']);
 Route::post('/usertrup',[TripsController::class, 'usertrup']);
