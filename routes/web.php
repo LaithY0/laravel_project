@@ -163,7 +163,7 @@ Route::get('/logout' , function(){
 })->name('logout');
 //search
 Route::get('/book' , [search_controller::class , 'index'])->name('book');
-Route::post('/search' , [search_controller::class , 'search'])->name('search');
+Route::post('/search' , [search_controller::class , 'search']);
 // Route::get('/book', function () {
 //     return view('book');
 // })->name('book');
