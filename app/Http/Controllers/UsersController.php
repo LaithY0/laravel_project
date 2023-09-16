@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\users;
 use App\Models\reservation;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -46,6 +45,23 @@ class UsersController extends Controller
 
         return view('edit', ['user' => $user]);
     }
+
+
+    public function userp()
+    {
+        $user = users::where('id', 2)->get();
+
+        return view('user', ['user' => $user]);
+    }
+
+
+    public function logoutAdmin(){
+        if(session()->has('admin')){
+            session()->pull('admin');
+        }
+        return redirect('admin');
+    }
+    
 
    
     public function createA(Request $request)
@@ -134,7 +150,7 @@ class UsersController extends Controller
 // }
 
 
-public function update(Request $request, $id)
+public function updateuser(Request $request, $id)
 {
     $request->validate([
         'name' => 'required|string|max:255',
@@ -145,33 +161,49 @@ public function update(Request $request, $id)
 
 
    
-    $user = users::find($id); // Note the capital 'User' and 'users' table name
+    $user = users::find($id); 
 
     if (!$user) {
         return redirect()->back()->with('error', 'User not found');
     }
 
-    $user->name = $request->input('name');
+    $user->Fname = $request->input('name');
+    $user->Lname = $request->input('lname');
     $user->email = $request->input('email');
     $user->phone = $request->input('phone');
 
-    // Handle photo upload
     if ($request->hasFile('photo')) {
         $photo = $request->file('photo');
-        $photoPath = $photo->store('public/myimg'); // Store the uploaded file in the 'public/myimg' directory
-        $user->photo = str_replace('public/', '', $photoPath); // Remove 'public/' from the file path
+        $photoname = $photo->getClientOriginalName();
+        $photo->move(public_path('assetsAdmin/images'), $photoname);
+        $user->photo = $photoname;
     }
     
 
     $user->save();
 
-    return redirect('user');
+    return redirect('userp');
 }
 
-public function logoutAdmin(){
-    if(session()->has('admin')){
-        session()->pull('admin');
+
+
+
+
+
+
+public function useredit($id)
+{
+    $user = Users::where('id', $id)->get(); 
+
+    if (!$user) {
+        return redirect()->back()->with('error', 'User not found');
     }
-    return redirect('admin');
+
+
+    
+    return view('edit', compact('user'));
 }
+
+
+
 }

@@ -50,7 +50,7 @@ class TripsController extends Controller
 
     public function enjoyment()
     {
-        $trips = trips::where('category_id', 1 )->get();
+        $trips = trips::where('category_id', 8 )->get();
         foreach ( $trips as $trip){
 
         }
@@ -62,7 +62,7 @@ class TripsController extends Controller
 
     public function medical()
     {
-        $trips = trips::where('category_id', 3)->get();
+        $trips = trips::where('category_id', 15)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -70,7 +70,7 @@ class TripsController extends Controller
 
     public function archaeological()
     {
-        $trips = trips::where('category_id', 2)->get();
+        $trips = trips::where('category_id', 10)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -78,7 +78,7 @@ class TripsController extends Controller
 
     public function religious()
     {
-        $trips = trips::where('category_id', 5)->get();
+        $trips = trips::where('category_id', 14)->get();
 
         return view('tours', ['trips' => $trips]);
 
@@ -93,13 +93,13 @@ class TripsController extends Controller
 
     // }
 
-    // public function ummdetails()
-    // {
-    //     $trips = trips::where('trip_name', 'Umm Qais, Irbid')->get();
+    public function ummdetails()
+    {
+        $trips = trips::where('trip_name', 'Umm Qais, Irbid')->get();
 
     //     return view('details')->with('trips', $trips);
 
-    // }
+    }
 
     /**
      * Remove the specified resource from storage.

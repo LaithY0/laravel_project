@@ -1,5 +1,3 @@
-@extends('layout.master')
-
 
 <head>
 
@@ -41,6 +39,13 @@ body {
     border-radius: 10px;
    
 }
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
 
 .filling-bar {
     height: 10px;
@@ -72,22 +77,23 @@ body {
 
     </style>
   </head>
-@section('title' , 'user')
-
+<body>
 <br><br><br><br><br>
-@section('page')
+
+<div>
 
 @foreach ($user as $user)
 
 <div class="form-container">
     <h2>Edit Profile</h2>
-    <img src="{{$user->photo}}" alt="User Photo" class="profile-image">
-   
-       {{-- <input type="file" id="photo" name="photo">  --}}
-    
+
+    <img src="/myimg/{{$user->photo}}" alt="User" class="profile-image">
+
        <form action="/update/{{$user->id}}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="text" name="name" class="form-input" value="{{$user->Fname}}" required>
+        <div class="filling-bar"></div>
+        <input type="text" name="lname" class="form-input" value="{{$user->Lname}}" required>
         <div class="filling-bar"></div>
         <input type="email" name="email" class="form-input" value="{{$user->email}}" required>
         <div class="filling-bar"></div>
@@ -102,5 +108,7 @@ body {
 
 @endforeach
     
-@endsection
-    
+
+</div>
+
+</body>
