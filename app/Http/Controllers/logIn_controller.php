@@ -25,6 +25,7 @@ class logIn_controller extends Controller
             $data = users::where('email', $email)->first();
             if ($data) {
                 $request->session()->put('name', $data->Fname);
+                $request->session()->put('id', $data->id);
             }
             return redirect()->route('home');   
         } else {

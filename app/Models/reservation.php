@@ -16,13 +16,13 @@ class reservation extends Model
 
     public function user()
     {
-        return $this->belongsTo(users::class);
+        return $this->belongsTo(users::class , 'user_id');
     }
 
     // Define the many-to-one relationship with Trip
     public function trip()
     {
-        return $this->belongsTo(trips::class);
+        return $this->belongsTo(trips::class , 'trip_id');
     }
 
 }

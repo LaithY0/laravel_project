@@ -17,11 +17,11 @@ class UsersController extends Controller
  
 }
 
-    public function user(){
-        $user = Auth::user();
-        return view('user', compact('user'));
+    // public function user(){
+    //     $user = users::where('id' , session('id'));
+    //     return view('user', ['user' => $user]);
 
-    }
+    // }
     public function userAdmin(){
         $user = Auth::user();
         return view('admin.Account', compact('user'));
@@ -182,7 +182,7 @@ public function updateuser(Request $request, $id)
 
     $user->save();
 
-    return redirect('userp');
+    return redirect()->route('user_profile');
 }
 
 

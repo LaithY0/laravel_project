@@ -70,28 +70,36 @@
 
 
 
-@foreach ($user as $user)
+  
+
+
+    @if (session('name'))
+    @foreach ($user as $user)
     
-<div class="profile-container">
-    <h2>Profile </h2>
-    <img src="myimg/{{$user->photo}}" alt="User Photo" class="profile-image">
-    <div class="profile-name">{{$user->Fname}}  {{$user->Lname}}</div>
-      <div class="profile-email">{{$user->email}}</div>
-      <div class="profile-phone">{{$user->phone}}</div>
-      <form  action="{{ url('/user/' . $user->id . '/edit/') }}" method="POST">
-        @csrf
-        @method('put')
-        <input type="hidden" name="user_id" value="{{ $user->id }}">
-      <input type="submit" value="Edit" class="edit-button">
-      </form>
-  </div>
+      <div class="profile-container">
+          <h2>Profile </h2>
+          <img src="myimg/{{$user->photo}}" alt="User Photo" class="profile-image">
+          <div class="profile-name">{{$user->Fname}}  {{$user->Lname}}</div>
+            <div class="profile-email">{{$user->email}}</div>
+            <div class="profile-phone">{{$user->phone}}</div>
+            <form  action="{{ url('/user/' . $user->id . '/edit/') }}" method="POST">
+              @csrf
+              @method('put')
+              <input type="hidden" name="user_id" value="{{ $user->id }}">
+              <input type="submit" value="Edit" class="edit-button">
+            </form>
+        </div>
 
-
+  @endforeach
+  <br>
   <div>
-    
+    @foreach ($reservations as $reservation)
+      
     <table class="table table-striped table-dark">
         <thead>
             <tr>
+
+              <th scope="col">Tour Number </th>
               <th scope="col">Tour name </th>
               <th scope="col">Data of the tour </th>
               <th scope="col">Tour price </th>
@@ -106,21 +114,24 @@
 
         
             <tr>
-                <td>Petra </td>
-                <td>2023-10-10</td>
-                <td>120</td>
-                <td>5</td>
-                <td>20</td>
-                <td><img src="myimg/petra.jpg" alt="photo" height="120px"></td>
+                <td>{{$reservation->id}}</td>
+                <td>{{$reservation->trip->trip_name}}</td>
+                <td>{{$reservation->trips_days}}</td>
+                <td>{{$reservation->trip->price}}</td>
+                <td>{{$reservation->trip->days}}</td>
+                <td>{{$reservation->trip->clients}}</td>
+                <td><img src="{{$reservation->trip->photo}}" alt="photo" height="120px"></td>
             </tr>
           </tbody>
     </table>    
-
+    
 
   </div>
 
 @endforeach
-
+    @endif
+   
+ 
 
 @endsection
     

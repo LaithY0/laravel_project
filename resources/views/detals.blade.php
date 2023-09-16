@@ -78,19 +78,21 @@
                         
                     </div>
 
-                    <form  action="{{route('user')}}" method="post">
+                    <form  action="{{route('confirmation')}}" method="post">
                         @csrf
                         <label for="">Choose The Trip Day</label>
                         <br>
                         <input type="hidden" name="trip_id" value="{{ $trip->id }}">
-                         <input type="checkbox" name="trip_day" value="{{$trip->day1}}">
+                        <input type="hidden" name="user_id" value="{{session('id')}}">
+                         <input type="radio" name="trip_day" value="{{$trip->day1}}">
                          <label for="">{{$trip->day1}}</label>
                          <br>
-                         <input type="checkbox" name="trip_day" value="{{$trip->day2}}">
+                         <input type="radio" name="trip_day" value="{{$trip->day2}}">
                          <label for="">{{$trip->day2}}</label>
                          <br>
-                         <input type="checkbox" name="trip_day" value="{{$trip->day3}}">
+                         <input type="radio" name="trip_day" value="{{$trip->day3}}">
                          <label for="">{{$trip->day3}}</label>
+                         
                          <br>
                         <input type="submit" value="Reservation confirmation" class="btn btn-primary">
                     </form>

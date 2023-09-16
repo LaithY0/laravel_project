@@ -117,11 +117,8 @@ Route::get('/tours', function () {
 
 
 
-<<<<<<< HEAD
-=======
 
 Route::get('userp', [UsersController::class, 'userp'] );
->>>>>>> d1b64edf583bfadb88cb3ac5c4320b05e95850b9
 Route::get('/enjoyment',[TripsController::class, 'enjoyment']);
 Route::get('/medical',[TripsController::class, 'medical']);
 Route::get('/archaeological',[TripsController::class, 'archaeological']);
@@ -170,6 +167,5 @@ Route::post('/search' , [search_controller::class , 'search'])->name('search');
 Route::get('/', [search_controller::class , 'destroy'])->name('home');
 Route::get('/details', [details::class , 'index']);
 Route::get('/details/{id}' , [details::class , 'get'])->name('details');
-Route::post('/reservations_trips' , function(){
-    return view('user');
-})->name('user');
+Route::post('/reservations_trips' , [ReservatioController::class , 'confirmation'])->name('confirmation');
+Route::get('/user' , [ReservatioController::class , 'user_trip'])->name('user_profile');
