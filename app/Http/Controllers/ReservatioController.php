@@ -118,6 +118,37 @@ class ReservatioController extends Controller
 
 
 
+
+
+    }
+
+
+    
+    public function confirmation(Request $request){
+        $request->validate([
+            'trip_day' => 'required',
+        ]);
+        $user_id = $request->input('user_id');
+        $trip_id = $request->input('trip_id');
+        $request->session()->put('trip_id' , $trip_id);
+        $day = $request->input('trip_day');
+        $confirmation = new reservation;
+        $confirmation->user_id = $user_id;
+        $confirmation->trip_id = $trip_id;
+        $confirmation->trips_days = $day;
+        $confirmation->save();
+        return redirect()->route('user_profile');
+    }
+    public function user_trip()
+    {
+        $user = users::where('id' , '=',session('id'))->get();
+        // return view('user', ['user' => $user]);
+        $userId = session('id');
+        $tripId = session('trip_id');
+        
+        $reservations = reservation::where('user_id', '=', $userId)->with('user', 'trip')->get();
+
+        return view('user', compact('reservations' , 'user'));
     }
     
 }

@@ -25,6 +25,12 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    @yield('style')
+    <style>
+        .user{
+          margin-left: 1rem;
+        }
+    </style>
   </head>
   <body>
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -45,6 +51,7 @@
             @if(session('name'))
             <li class="nav-item"><a href="{{route('logout')}}" class="nav-link">LOGOUT</a></li>
             <li class="nav-item cta"><a href="book" class="nav-link">BOOK NOW</a></li>
+            <li class="nav-item cta"><a href="user" class="nav-link user">{{ ucfirst(session('name')[0]) }}</a></li>
             @else
             <li class="nav-item"><a href="login" class="nav-link">LOGIN</a></li>
             <li class="nav-item"><a href="signup" class="nav-link">REGISTER</a></li>
