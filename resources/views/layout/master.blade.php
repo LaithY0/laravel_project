@@ -30,6 +30,12 @@
         .user{
           margin-left: 1rem;
         }
+       .navbar-nav > .nav-item > a {
+        color: white !important;
+        }
+        .navbar-nav > .nav-item > a:hover{
+          color: black !important;
+        }
     </style>
   </head>
   <body>
