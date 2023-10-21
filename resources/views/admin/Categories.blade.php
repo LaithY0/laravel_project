@@ -58,22 +58,20 @@
 				<div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
 					<div class="app-card app-card-orders-table shadow-sm mb-5">
 						<div class="app-card-body">
-							
+
 							<div class="table-responsive">
-							@if (session('error1'))
-							<div class="alert alert-danger m-5">
-								{{ session('error1') }}
-							</div>
-							@endif
+								@if (session('error1'))
+								<div class="alert alert-danger m-5">
+									{{ session('error1') }}
+								</div>
+								@endif
 								<table class="table app-table-hover mb-0 text-left">
 									<thead>
 										<tr>
 											<th class="cell">id</th>
 											<th class="cell">category_name</th>
 											<th class="cell">category_picture</th>
-											<!-- <th class="cell">phone</th> -->
-											<!-- <th class="cell">Status</th>
-												<th class="cell">Total</th> -->
+
 											<th class="cell"></th>
 										</tr>
 									</thead>
@@ -83,11 +81,9 @@
 										<tr>
 											<td class="cell">{{$i->id }}</td>
 											<td class="cell"><span class="truncate">{{$i->category_name }}</span></td>
-											<td class="cell"><img src="{{asset('assetsAdmin/images/'.$i->category_picture)}}" alt="" height="60"></td>
-											<!-- <td class="cell"><span class="cell-data">11 Oct</span><span
-														class="note">11:18 AM</span></td> -->
-											<!-- <td class="cell"><span class="badge bg-success">Paid</span></td>
-												<td class="cell">$678.26</td> -->
+											<td class="cell"><img style=" height: 50px;
+  width: 110px;" src="{{asset('assetsAdmin/images/'.$i->category_picture)}}" alt="" height="60"></td>
+
 											<td class="cell">
 												<a class="btn btn-danger btn-sm" role="button" href="{{'deleteCat/id/'.$i->id}}">Delete</a>
 												<a class="btn btn-success btn-sm" role="button" data-toggle="modal" data-target="{{'#exampleModalCenter'.$i->id}}">Update</a>

@@ -32,17 +32,15 @@
 							</div><!--//app-card-header-->
 							<div class="app-card-body px-4 w-100">
 								<div class="item border-bottom py-3">
-									<div class="row justify-content-between align-items-center">
+									<!-- <div class="row justify-content-between align-items-center">
 										<div class="col-auto">
 											<div class="item-label mb-2"><strong>Photo</strong></div>
 											<div class="item-data"><img class="profile-image"
 													src="{{ asset('images/avatar.jpg') }}" alt=""></div>
-										</div><!--//col-->
-										<!-- <div class="col text-end">
-											<a class="btn-sm app-btn-secondary" href="#">Change</a>
-										</div> -->
-										<!--//col-->
-									</div><!--//row-->
+										</div>
+										
+									</div> -->
+									<!--//row-->
 								</div><!--//item-->
 								<div class="item border-bottom py-3">
 									<div class="row justify-content-between align-items-center">

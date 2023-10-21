@@ -51,6 +51,7 @@ Route::get('AdminAccount', [UsersController::class, 'userAdmin'] )->middleware('
 
 
 Route::get('AdminIndex', [ReservatioController::class, 'total'] )->middleware('admin');
+//Route::get('AdminIndex', [ReservatioController::class, 'total'] )->middleware('admin');
 
 
 Route::get('AdminCategories', [CategoryController::class, 'index'] )->middleware('admin');
@@ -162,6 +163,13 @@ Route::get('/logout' , function(){
 })->name('logout');
 //search
 Route::get('/book' , [search_controller::class , 'index'])->name('book');
+Route::post('/search' , [search_controller::class , 'search']);
+// Route::get('/book', function () {
+//     return view('book');
+// })->name('book');
+Route::get('/' , function(){
+    return view('home');
+});
 Route::post('/search' , [search_controller::class , 'search'])->name('search');
 
 Route::get('/', [search_controller::class , 'destroy'])->name('home');

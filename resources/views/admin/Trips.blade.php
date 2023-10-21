@@ -90,7 +90,8 @@
 											<td class="cell"><span class="badge bg-success">{{$i->clients}}</span></td>
 											<td class="cell">
 												<!-- {{$i->photo}} -->
-												 <img src="{{asset('assetsAdmin/images/'.$i->photo)}}" alt="" height="60"></td>
+												 <img style=" height: 50px;
+  width: 110px;" src="{{asset('assetsAdmin/images/'.$i->photo)}}" alt="" ></td>
 											<td class="cell">{{$i->days}}</td>
 											<td class="cell">{{$i->details}}</td>
 											<td class="cell">{{$i->category->category_name }}</td>

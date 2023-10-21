@@ -83,7 +83,7 @@
 
 
 											<td class="cell">
-												<a class="btn btn-danger btn-sm" role="button" href="{{'deleteRes/id/'.$i->id}}">Delete</a>
+												<a class="btn btn-danger btn-sm" role="button" href="{{'deleteRes/id/'.$i->id}}">Reject Reservation</a>
 												<a class="btn btn-success btn-sm" role="button" data-toggle="modal" data-target="{{'#cc'.$i->id}}">Update</a>
 
 												
