@@ -23,7 +23,7 @@
   </div>
 </div>
 
-<div class="tours">
+<div style="display: flex;flex-wrap:wrap">
 @foreach ( $trips as $trips)
 
 
